@@ -121,7 +121,7 @@
                                 @foreach ($path['challenges'] as $index => $challenge)
                                     <a
                                         class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="/path"
+                                        href="{{ $page->baseUrl }}/path"
                                         x-show="shown"
                                         x-transition:enter-end="opacity-100 translate-x-0"
                                         x-transition:enter-start="opacity-0 translate-x-10"
