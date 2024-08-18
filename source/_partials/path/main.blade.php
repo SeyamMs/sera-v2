@@ -42,28 +42,28 @@
                         <div class="lg:gap-2 flex items-center gap-1">
                             <a
                                 class="md:text-sm flex-shrink-0 p-2 text-xs text-white"
-                                href="/?to=about-section"
+                                href="{{ $page->baseUrl }}/?to=about-section"
                             >
                                 التعريف بالهاكاثون
                             </a>
                             <span class="md:block flex-shrink-0 hidden w-px h-4 bg-gray-100"></span>
                             <a
                                 class="md:text-sm flex-shrink-0 p-2 text-xs text-white"
-                                href="/?to=goals-section"
+                                href="{{ $page->baseUrl }}/?to=goals-section"
                             >
                                 الاهداف
                             </a>
                             <span class="md:block flex-shrink-0 hidden w-px h-4 bg-gray-100"></span>
                             <a
                                 class="md:text-sm flex-shrink-0 p-2 text-xs text-white"
-                                href="/?to=paths-section"
+                                href="{{ $page->baseUrl }}/?to=paths-section"
                             >
                                 المسارات
                             </a>
                             <span class="md:block flex-shrink-0 hidden w-px h-4 bg-gray-100"></span>
                             <a
                                 class="md:text-sm flex-shrink-0 p-2 text-xs text-white"
-                                href="/?to=prizes-section"
+                                href="{{ $page->baseUrl }}/?to=prizes-section"
                             >
                                 الجوائز
                             </a>
