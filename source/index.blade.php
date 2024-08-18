@@ -1,0 +1,18 @@
+@extends('_layouts.main')
+
+@section('body')
+    @include('_partials.index.main')
+    @include('_partials.index.ticker')
+    @include('_partials.index.sera')
+    @include('_partials.index.about')
+    @include('_partials.index.goals')
+    @include('_partials.index.paths')
+    @include('_partials.index.targets')
+    @include('_partials.index.prizes')
+    @include('_partials.index.aspects')
+    @include('_partials.index.timeline')
+    @include('_partials.index.countdown')
+    @include('_partials.index.terms')
+    @include('_partials.index.partners')
+    @include('_partials.index.faqs')
+@endsection
