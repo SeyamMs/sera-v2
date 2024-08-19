@@ -46,7 +46,7 @@
                         x-transition:leave-start="opacity-100 translate-y-0"
                         x-transition:leave="transition transform ease-in duration-300"
                     >
-                        الابتكار
+                        الأثر المتوقع
                     </h3>
                 </div>
 
@@ -76,7 +76,7 @@
                         x-transition:leave-start="opacity-100 translate-y-0"
                         x-transition:leave="transition transform ease-in duration-300"
                     >
-                        جدوى الفكرة
+                        الأثر الاقتصادي
                     </h3>
                 </div>
 
@@ -106,7 +106,7 @@
                         x-transition:leave-start="opacity-100 translate-y-0"
                         x-transition:leave="transition transform ease-in duration-300"
                     >
-                        فريق العمل
+                        الفريق والفكرة
                     </h3>
                 </div>
 

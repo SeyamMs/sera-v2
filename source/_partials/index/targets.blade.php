@@ -7,7 +7,7 @@
             'wrapper_class' => 'lg:ml-0 ml-auto mr-auto',
         ],
         [
-            'title' => 'رواد الأعمال ومطورو الأعمال',
+            'title' => 'الرواد ومطوري الأعمال',
             'image' => 'images/targets-2.jpg',
             'col_class' => 'xl:order-none lg:order-last',
             'wrapper_class' => 'xl:ml-auto lg:ml-0 ml-auto mr-auto',
@@ -22,7 +22,7 @@
 @endphp
 
 <section
-    class="relative flex items-center min-h-[919px] overflow-hidden bg-white"
+    class="relative flex items-center xl:min-h-[919px] lg:min-h-[1513px] md:min-h-[1934px] sm:min-h-[1464px] min-h-[1536px] overflow-hidden bg-white"
     x-data="{ shown: false }"
     x-intersect.threshold.20="shown = true"
 >

@@ -16,9 +16,14 @@
                 x-transition:leave="transition transform ease-in duration-300"
             >
                 <img
-                    class="object-scale-down w-full h-full"
+                    class="md:block hidden object-scale-down w-full h-full"
                     src="{{ $page->asset('images/white-logo.svg') }}"
                     alt="white-logo"
+                />
+                <img
+                    class="md:hidden block object-scale-down w-full h-full contrast-[5] brightness-[5]"
+                    src="{{ $page->asset('images/electrathon-logo.svg') }}"
+                    alt="electrathon-logo"
                 />
             </div>
 

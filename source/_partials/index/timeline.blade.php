@@ -2,27 +2,32 @@
     $paths = [
         [
             'title' => 'بداية فترة التسجيل',
-            'date' => '14',
+            'date' => '18',
+            'month' => 'اغسطس',
             'inverted' => true,
         ],
         [
             'title' => 'نهاية فترة التسجيل',
-            'date' => '25',
+            'date' => '31',
+            'month' => 'اغسطس',
             'inverted' => false,
         ],
         [
             'title' => 'الفرز والترشيح',
-            'date' => '25 - 27',
+            'date' => '01 - 03',
+            'month' => 'سبتمبر',
             'inverted' => false,
         ],
         [
             'title' => 'إقامة إلكتراثون',
-            'date' => '29 - 31',
+            'date' => '05 - 07',
+            'month' => 'سبتمبر',
             'inverted' => true,
         ],
         [
             'title' => 'التحكيم وتكريم الفائزين',
-            'date' => '31',
+            'date' => '07',
+            'month' => 'سبتمبر',
             'inverted' => false,
         ],
     ];
@@ -76,14 +81,14 @@
                                 x-transition:leave="transition transform ease-in duration-300"
                             >
                                 <span
-                                    class="font-bold {{ str($path['date'])->contains('-') ? 'text-[16px]' : 'text-[26px]' }} {{ $path['inverted'] ? 'text-[#230C44]' : 'text-white' }}"
+                                    class="font-bold leading-6 {{ str($path['date'])->contains('-') ? 'text-[16px]' : 'text-[26px]' }} {{ $path['inverted'] ? 'text-[#230C44]' : 'text-white' }}"
                                 >
                                     {{ $path['date'] }}
                                 </span>
                                 <span
                                     class="text-[16px] font-bold {{ $path['inverted'] ? 'text-[#230C44]' : 'text-white' }}"
                                 >
-                                    اغسطس
+                                    {{ $path['month'] }}
                                 </span>
                             </div>
 

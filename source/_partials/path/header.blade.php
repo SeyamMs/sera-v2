@@ -27,7 +27,7 @@
                 </div>
 
                 <div
-                    class="bg-opacity-15 backdrop-blur rounded-xl md:p-3 lg:p-4 flex p-2 bg-white"
+                    class="bg-opacity-15 backdrop-blur rounded-xl md:p-3 lg:p-4 flex flex-shrink-0 p-2 bg-white"
                     x-show="shown"
                     x-transition:enter-end="opacity-100 translate-y-0"
                     x-transition:enter-start="opacity-0 -translate-y-10"
@@ -48,7 +48,7 @@
                             class="md:text-sm flex-shrink-0 p-2 text-xs text-white"
                             href="{{ $page->baseUrl }}/?to=goals-section"
                         >
-                            الاهداف
+                            الأهداف
                         </a>
                         <span class="md:block flex-shrink-0 hidden w-px h-4 bg-gray-100"></span>
                         <a
@@ -59,16 +59,36 @@
                         </a>
                         <span class="md:block flex-shrink-0 hidden w-px h-4 bg-gray-100"></span>
                         <a
-                            class="md:text-sm flex-shrink-0 p-2 text-xs text-white"
+                            class="md:text-sm sm:block flex-shrink-0 hidden p-2 text-xs text-white"
                             href="{{ $page->baseUrl }}/?to=prizes-section"
                         >
                             الجوائز
                         </a>
+                        <div class="md:w-28 md:hidden flex items-center flex-shrink-0 h-8">
+                            <button
+                                class="text-lg group hover:bg-[#6d5d8250] hover:ring-2 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-between hover:justify-center p-1 h-8 md:w-28 bg-white hover:text-white text-[#230C44]"
+                                data-tf-popup="Z2f34azw"
+                            >
+                                <div class="flex justify-center flex-grow">
+                                    <span class="md:text-sm px-2 text-xs">
+                                        انضم الينا
+                                    </span>
+                                </div>
+                                <div
+                                    class="group-hover:hidden sm:flex hidden shrink-0 items-center justify-center size-7 rounded-full bg-[#230C44]">
+                                    <img
+                                        class="w-4"
+                                        src="{{ $page->asset('images/icons/lamp-light.svg') }}"
+                                        alt="lamp-light"
+                                    />
+                                </div>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
 
-                <div class="lg:flex items-center hidden w-40 h-16">
+                <div class="md:flex items-center hidden w-40 h-16">
                     <button
                         class="text-lg group hover:bg-[#6d5d8250] hover:ring-2 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-between hover:justify-center p-1 h-16 w-full bg-white hover:text-white text-[#230C44]"
                         data-tf-popup="Z2f34azw"

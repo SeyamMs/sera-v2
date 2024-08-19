@@ -1,5 +1,5 @@
 <section
-    class="relative flex items-center min-h-[908px] overflow-hidden bg-white"
+    class="relative flex items-center xl:min-h-[908px] lg:min-h-[1028px] md:min-h-[1104px] sm:min-h-[1076px] min-h-[1160px] overflow-hidden bg-white"
     id="goals-section"
     x-data="{ shown: false }"
     x-intersect.threshold.20="shown = true"
@@ -59,7 +59,7 @@
                             x-transition:leave-start="opacity-100 translate-y-0"
                             x-transition:leave="transition transform ease-in duration-300"
                         >
-                            أهداف الهاكاثون
+                            أهداف الكتراثون
                         </h2>
 
                         <div class="flex flex-col gap-16">
@@ -92,7 +92,7 @@
                                         التعزيز والتمكين
                                     </h3>
                                     <h4
-                                        class="font-normal md:text-xl text-lg text-[#1A1A1A] text-justify"
+                                        class="font-normal md:text-xl text-lg text-[#1A1A1A]"
                                         x-show="shown"
                                         x-transition:enter-end="opacity-100 translate-x-0"
                                         x-transition:enter-start="opacity-0 translate-x-10"
@@ -135,7 +135,7 @@
                                         الابتكار
                                     </h3>
                                     <h4
-                                        class="font-normal md:text-xl text-lg text-[#1A1A1A] text-justify"
+                                        class="font-normal md:text-xl text-lg text-[#1A1A1A]"
                                         x-show="shown"
                                         x-transition:enter-end="opacity-100 translate-x-0"
                                         x-transition:enter-start="opacity-0 translate-x-10"
@@ -144,8 +144,7 @@
                                         x-transition:leave-start="opacity-100 translate-x-0"
                                         x-transition:leave="transition transform ease-in duration-300"
                                     >
-                                        ابتكار حلول مستدامة للتحديات في قطاع الكهرباء وإبراز دور أفراد المجتمع في حل
-                                        التحديات.
+                                        تطبيق منهجيات الابتكار والتحول الرقمي في قطاع الكهرباء.
                                     </h4>
                                 </div>
                             </div>
@@ -179,7 +178,7 @@
                                         الاستدامة
                                     </h3>
                                     <h4
-                                        class="font-normal md:text-xl text-lg text-[#1A1A1A] text-justify"
+                                        class="font-normal md:text-xl text-lg text-[#1A1A1A]"
                                         x-show="shown"
                                         x-transition:enter-end="opacity-100 translate-x-0"
                                         x-transition:enter-start="opacity-0 translate-x-10"
@@ -188,7 +187,7 @@
                                         x-transition:leave-start="opacity-100 translate-x-0"
                                         x-transition:leave="transition transform ease-in duration-300"
                                     >
-                                        إيجاد كيانات استثمارية في قطاع الكهرباء.
+                                        حلول مستدامة للتحديات بهدف إيجاد كيانات استثمارية في قطاع الكهرباء.
                                     </h4>
                                 </div>
                             </div>

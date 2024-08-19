@@ -1,7 +1,7 @@
 @php
     $paths = [
         [
-            'title' => 'رضا المستهلك',
+            'title' => 'تعزيز رضا المستهلك',
             'image' => 'images/paths-1.jpg',
             'col_class' => '',
             'wrapper_class' => 'lg:ml-0 ml-auto mr-auto',
@@ -17,7 +17,7 @@
             ],
         ],
         [
-            'title' => 'دمج الطاقة',
+            'title' => 'دمج الطاقة المتجددة',
             'image' => 'images/paths-2.jpg',
             'col_class' => 'xl:order-none lg:order-last',
             'wrapper_class' => 'xl:ml-auto lg:ml-0 ml-auto mr-auto',
@@ -27,19 +27,19 @@
                     'link' => '/paths/2-1-innovative-solutions-for-backup-generators-and-energy-storage',
                 ],
                 [
-                    'title' => 'دمج مصادر الطاقة المتجددة وغير المتجددة بكفاءة',
+                    'title' => 'دمج مصادر الطاقة المتجددة والطاقة التقليدية',
                     'link' => '/paths/2-2-efficient-integration-of-renewable-and-non-renewable-energy-sources',
                 ],
             ],
         ],
         [
-            'title' => 'التقنيات الناشئة',
+            'title' => 'تبني التقنيات الناشئة',
             'image' => 'images/paths-3.jpg',
             'col_class' => '',
             'wrapper_class' => 'lg:mr-0 ml-auto mr-auto',
             'challenges' => [
                 [
-                    'title' => 'التقنيات الناشئة',
+                    'title' => 'تبني التقنيات الناشئة',
                     'link' => '/paths/3-1-emerging-technologies',
                 ],
             ],
@@ -48,7 +48,7 @@
 @endphp
 
 <section
-    class="relative flex min-h-[1179px] items-center overflow-hidden bg-[#230C44]"
+    class="relative flex xl:min-h-[1179px] lg:min-h-[2025px] md:min-h-[2712px] sm:min-h-[2186px] min-h-[2102px] items-center overflow-hidden bg-[#230C44]"
     id="paths-section"
     x-data="{ shown: false }"
     x-intersect.threshold.20="shown = true"
@@ -124,7 +124,7 @@
                                     x-transition:leave-start="opacity-100 translate-x-0"
                                     x-transition:leave="transition transform ease-in duration-300"
                                 >
-                                    إختر المسار وشاهد التفاصيل
+                                    إختر التحدي وشاهد التفاصيل
                                 </h4>
 
                                 @foreach ($path['challenges'] as $index => $challenge)
@@ -163,7 +163,7 @@
                                             </span>
                                         </div>
                                         <span
-                                            class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] text-justify max-w-64"
+                                            class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] max-w-64"
                                             x-show="shown"
                                             x-transition:enter-end="opacity-100 translate-x-0"
                                             x-transition:enter-start="opacity-0 translate-x-10"

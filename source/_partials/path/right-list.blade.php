@@ -67,13 +67,13 @@
                         x-transition:leave-start="opacity-100 translate-y-0"
                         x-transition:leave="transition transform ease-in duration-300"
                     >
-                        <div class="absolute top-0 left-0 z-0 w-full h-full">
-                            <img
-                                class="object-cover object-center w-full h-full"
-                                src="{{ $page->asset($data['image']) }}"
-                                alt="{{ str($data['image'])->before('.')->afterLast('/') }}"
-                            />
-                        </div>
+
+                        <img
+                            class="object-cover object-center w-full h-full"
+                            src="{{ $page->asset($data['image']) }}"
+                            alt="{{ str($data['image'])->before('.')->afterLast('/') }}"
+                        />
+
                     </div>
                 </div>
             </div>

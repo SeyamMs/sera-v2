@@ -1,5 +1,5 @@
 <section
-    class="relative min-h-[919px] flex items-center overflow-hidden bg-[#230C44]"
+    class="relative xl:min-h-[919px] lg:min-h-[1045px] md:min-h-[923px] sm:min-h-[729px] min-h-[960px] flex items-center overflow-hidden bg-[#230C44]"
     x-data="{ shown: false }"
     x-intersect.threshold.20="shown = true"
 >
@@ -34,7 +34,8 @@
                     x-transition:leave="transition transform ease-in duration-300"
                 >
                     أنشئت الهيئة بقرار مجلس الوزراء رقم (٢٣٦) في ١٤٢٢/٨/٢٧هـ، الموافق ٢٠٠١/١١/١٢م وتقوم الهيئة بمهمة
-                    تنظيم نشاط الكهرباء ويشمل ذلك توليد الكهرباء والإنتاج المزدوج من أي مصدر من مصادر الطاقة،
+                    تنظيم نشاط الكهرباء ويشمل ذلك توليد الكهرباء والإنتاج المزدوج من أي مصدر من مصادر الطاقة، ونقل
+                    الكهرباء، وتوزيعها، والمتاجرة بها، وبيعها بالتجزئة، ونشاط المشتري الرئيس، وتبريد المناطق.
                 </p>
 
                 <p
@@ -47,21 +48,8 @@
                     x-transition:leave-start="opacity-100 translate-y-0"
                     x-transition:leave="transition transform ease-in duration-300"
                 >
-                    ونقل الكهرباء، وتوزيعها، والمتاجرة بها، وبيعها بالتجزئة، ونشاط المشتري الرئيس، وتبريد المناطق. وينص
-                    التنظيم على أن تقوم الهيئة بتنظيم الخدمات والإشراف عليها في نطاق اختصاصها ومراقبة أدائها، والتنسيق
-                    فيما بين المؤسسات والجهات ذات العلاقة وبين الأشخاص المرخص لهم،
-                </p>
-
-                <p
-                    class="lg:text-[28px] md:text-[22px] text-[16px] font-medium text-white text-center"
-                    x-show="shown"
-                    x-transition:enter-end="opacity-100 translate-y-0"
-                    x-transition:enter-start="opacity-0 -translate-y-10"
-                    x-transition:enter="transition transform ease-out duration-300 delay-[1200ms]"
-                    x-transition:leave-end="opacity-0 -translate-y-10"
-                    x-transition:leave-start="opacity-100 translate-y-0"
-                    x-transition:leave="transition transform ease-in duration-300"
-                >
+                    وينص التنظيم على أن تقوم الهيئة بتنظيم الخدمات والإشراف عليها في نطاق اختصاصها ومراقبة أدائها،
+                    والتنسيق فيما بين المؤسسات والجهات ذات العلاقة وبين الأشخاص المرخص لهم،
                     لوضع الإطار التنظيمي والإجرائي اللازم لضمان مزاولة أنشطة الخدمات عند مستويات ذات جودة وموثوقية عالية
                     وتوفيرها للمستهلك بأسعار تنافسية معقولة تحقق العدالة بين المستهلكين.
                 </p>
@@ -75,7 +63,7 @@
                     x-show="shown"
                     x-transition:enter-end="opacity-100 translate-y-0"
                     x-transition:enter-start="opacity-0 -translate-y-10"
-                    x-transition:enter="transition transform ease-out duration-300 delay-[1500ms]"
+                    x-transition:enter="transition transform ease-out duration-300 delay-[1200ms]"
                     x-transition:leave-end="opacity-0 -translate-y-10"
                     x-transition:leave-start="opacity-100 translate-y-0"
                     x-transition:leave="transition transform ease-in duration-300"

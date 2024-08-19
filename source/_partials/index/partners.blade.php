@@ -14,13 +14,13 @@
             'image' => 'images/partners/code-logo.svg',
             'url' => 'https://code.mcit.gov.sa/ar',
         ],
-        [
-            'title' => 'الشريك الريادي',
-            'inverted' => false,
-            'partner' => 'dulani-logo',
-            'image' => 'images/partners/dulani-logo.webp',
-            'url' => 'https://www.dulani.gov.sa',
-        ],
+        // [
+        //     'title' => 'الشريك الريادي',
+        //     'inverted' => false,
+        //     'partner' => 'dulani-logo',
+        //     'image' => 'images/partners/dulani-logo.webp',
+        //     'url' => 'https://www.dulani.gov.sa',
+        // ],
     ];
     $partners2 = [
         [
@@ -112,7 +112,7 @@
                                     {{ $partner['title'] }}
                                 </h3>
                                 <div
-                                    class="md:w-80 w-64 h-48 py-4 px-8 rounded-md {{ $partner['inverted'] ? 'bg-[#230C44] hover:bg-primary' : 'border border-gray-100 hover:bg-primary-100' }}">
+                                    class="md:w-80 w-64 h-48 py-4 rounded-md {{ $partner['inverted'] ? 'bg-[#230C44] hover:bg-primary px-16' : 'border border-gray-100 hover:bg-primary-100 px-8' }}">
                                     <img
                                         class="object-scale-down w-full h-full"
                                         src="{{ $page->asset($partner['image']) }}"
@@ -129,13 +129,15 @@
                     x-show="shown"
                     x-transition:enter-end="opacity-100 translate-y-0"
                     x-transition:enter-start="opacity-0 -translate-y-10"
-                    x-transition:enter="transition transform ease-out duration-300 delay-[2100ms]"
+                    x-transition:enter="transition transform ease-out duration-300 delay-[1800ms]"
                     x-transition:leave-end="opacity-0 -translate-y-10"
                     x-transition:leave-start="opacity-100 translate-y-0"
                     x-transition:leave="transition transform ease-in duration-300"
                 >
-                    <p class="lg:text-[26px] md:text-[20px] text-[16px] font-bold text-center text-[#1B1B1B]">
-                        بإشراف فريق ( البحث والابتكار ) بالهيئة السعودية لتنظيم الكهرباء
+                    <p class="lg:text-[22px] md:text-[16px] text-[12px] font-bold text-center text-[#1B1B1B]">
+                        بإشراف فريق ( البحث والابتكار )
+                        <br />
+                        بالهيئة السعودية لتنظيم الكهرباء
                     </p>
                 </div>
             </div>

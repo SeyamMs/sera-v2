@@ -11,17 +11,17 @@
                 <div class="flex-nowrap md:gap-8 flex gap-4">
                     <div
                         class="border-s-[3px] px-1 flex-shrink-0 flex border-[#913AFF] bg-gradient-to-r from-[#913AFF52] to-[#913AFF0A]">
-                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">فاعلية محفزة</h2>
+                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">فعالية محفزة</h2>
                     </div>
 
                     <div
                         class="border-s-[3px] px-1 flex-shrink-0 flex border-[#0F9DED] bg-gradient-to-r from-[#0F9DED52] to-[#0F9DED0A]">
-                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">إبتكر الأن</h2>
+                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">ابتكر الأن</h2>
                     </div>
 
                     <div
                         class="border-s-[3px] px-1 flex-shrink-0 flex border-[#10D07F] bg-gradient-to-r from-[#10D07F52] to-[#10D07F0A]">
-                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">إستكشف الحلول</h2>
+                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">استكشف الحلول</h2>
                     </div>
 
                     <div
@@ -31,7 +31,7 @@
 
                     <div
                         class="border-s-[3px] px-1 flex-shrink-0 flex border-[#0F9DED] bg-gradient-to-r from-[#0F9DED52] to-[#0F9DED0A]">
-                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">من اجل ممكلتنا</h2>
+                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">من أجل مملكتنا</h2>
                     </div>
 
                     <div
@@ -53,17 +53,17 @@
                 <div class="md:gap-8 flex flex-row-reverse gap-4">
                     <div
                         class="border-s-[3px] px-1 flex-shrink-0 flex border-[#913AFF] bg-gradient-to-r from-[#913AFF52] to-[#913AFF0A]">
-                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">فاعلية محفزة</h2>
+                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">فعالية محفزة</h2>
                     </div>
 
                     <div
                         class="border-s-[3px] px-1 flex-shrink-0 flex border-[#0F9DED] bg-gradient-to-r from-[#0F9DED52] to-[#0F9DED0A]">
-                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">إبتكر الأن</h2>
+                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">ابتكر الأن</h2>
                     </div>
 
                     <div
                         class="border-s-[3px] px-1 flex-shrink-0 flex border-[#10D07F] bg-gradient-to-r from-[#10D07F52] to-[#10D07F0A]">
-                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">إستكشف الحلول</h2>
+                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">استكشف الحلول</h2>
                     </div>
 
                     <div
@@ -73,7 +73,7 @@
 
                     <div
                         class="border-s-[3px] px-1 flex-shrink-0 flex border-[#0F9DED] bg-gradient-to-r from-[#0F9DED52] to-[#0F9DED0A]">
-                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">من اجل ممكلتنا</h2>
+                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">من أجل مملكتنا</h2>
                     </div>
 
                     <div

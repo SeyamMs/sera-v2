@@ -1,5 +1,5 @@
 <section
-    class="relative flex items-center min-h-screen overflow-hidden bg-white"
+    class="relative flex items-center min-h-[1140px] xl:min-h-[713px] lg:min-h-[812px] md:min-h-[744px] sm:min-h-[960px] overflow-hidden bg-white"
     id="about-section"
     x-data="{ shown: false }"
     x-intersect.threshold.20="shown = true"
@@ -33,8 +33,11 @@
                                 x-transition:leave-start="opacity-100 translate-y-0"
                                 x-transition:leave="transition transform ease-in duration-300"
                             >
-                                إلكتراثون الهيئة السعودية لتنظيم الكهرباء (SERA) هو منافسة وطنية للمبدعين والمطورين
-                                والمهتمين في قطاع الكهرباء، يهدف إلى التعاون لإيجاد حلول إبداعية للتحديات التي تواجه هذا
+                                إلكتراثون الهيئة السعودية لتنظيم الكهرباء
+                                (SERA)
+                                منافسة وطنية للمبتكرين والمطورين
+                                والمهتمين في قطاع الكهرباء، بهدف إيجاد إلى التكامل لإيجاد حلول إبداعية للتحديات التي
+                                تواجه هذا
                                 القطاع.
                             </p>
                         </div>

@@ -20,13 +20,13 @@
                         x-transition:leave-start="opacity-100 translate-y-0"
                         x-transition:leave="transition transform ease-in duration-300"
                     >
-                        <div class="absolute top-0 left-0 z-0 w-full h-full">
-                            <img
-                                class="object-cover object-center w-full h-full lg:object-[70%] md:object-[60%]"
-                                src="{{ $page->asset('images/about-section.png') }}"
-                                alt="about-section"
-                            />
-                        </div>
+
+                        <img
+                            class="object-cover object-center w-full h-full lg:object-[70%] md:object-[60%]"
+                            src="{{ $page->asset('images/about-section.png') }}"
+                            alt="about-section"
+                        />
+
                     </div>
                 </div>
             </div>
