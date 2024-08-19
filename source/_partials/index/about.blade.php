@@ -98,7 +98,7 @@
                         <div class="absolute top-0 left-0 z-0 w-full h-full">
                             <img
                                 class="object-cover object-center w-full h-full lg:object-[70%] md:object-[60%]"
-                                src="{{ $page->asset('images/about-section.png') }}"
+                                src="{{ $page->asset('images/about-section.jpg') }}"
                                 alt="about-section"
                             />
                         </div>

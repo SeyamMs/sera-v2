@@ -16,7 +16,7 @@
             'inverted' => false,
         ],
         [
-            'title' => 'إقامة الهاكاثون',
+            'title' => 'إقامة إلكتراثون',
             'date' => '29 - 31',
             'inverted' => true,
         ],
@@ -46,7 +46,7 @@
                 x-transition:leave-start="opacity-100 translate-y-0"
                 x-transition:leave="transition transform ease-in duration-300"
             >
-                رحلة الهاكاثون
+                رحلة إلكتراثون
             </h2>
 
 
@@ -59,7 +59,7 @@
                             x-show="shown"
                             x-transition:enter-end="opacity-100 translate-x-0"
                             x-transition:enter-start="opacity-0 {{ $loop->even ? '-translate-x-10' : 'translate-x-10' }}"
-                            x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 600 }}ms]"
+                            x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 300 + 300 }}ms]"
                             x-transition:leave-end="opacity-0 {{ $loop->even ? '-translate-x-10' : 'translate-x-10' }}"
                             x-transition:leave-start="opacity-100 translate-x-0"
                             x-transition:leave="transition transform ease-in duration-300"
@@ -70,7 +70,7 @@
                                 x-show="shown"
                                 x-transition:enter-end="opacity-100 translate-y-0"
                                 x-transition:enter-start="opacity-0 -translate-y-10"
-                                x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 800 }}ms]"
+                                x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 300 + 500 }}ms]"
                                 x-transition:leave-end="opacity-0 -translate-y-10"
                                 x-transition:leave-start="opacity-100 translate-y-0"
                                 x-transition:leave="transition transform ease-in duration-300"
@@ -92,7 +92,7 @@
                                 x-show="shown"
                                 x-transition:enter-end="opacity-100 translate-y-0"
                                 x-transition:enter-start="opacity-0 -translate-y-10"
-                                x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 900 }}ms]"
+                                x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 300 + 600 }}ms]"
                                 x-transition:leave-end="opacity-0 -translate-y-10"
                                 x-transition:leave-start="opacity-100 translate-y-0"
                                 x-transition:leave="transition transform ease-in duration-300"

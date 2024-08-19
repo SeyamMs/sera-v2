@@ -17,7 +17,7 @@
                         x-transition:leave-start="opacity-100 translate-y-0"
                         x-transition:leave="transition transform ease-in duration-300"
                     >
-                        نبذة عن التحدي
+                        {{ $data['title'] }}
                     </h2>
 
                     <div
@@ -40,11 +40,7 @@
                             x-transition:leave-start="opacity-100 translate-y-0"
                             x-transition:leave="transition transform ease-in duration-300"
                         >
-                            ذوو الإعاقة هم فئة من فئات المجتمع المتعددة، لهم احتياجاتهم التي تتطلب وجود بعض المعايير
-                            والمقومات الخاصة، ومن ذلك حاجتهم لارتداء ثياب ملائمة بمعايير صحية ونفسية وجمالية تُلبي
-                            متطلباتهم، تكمن المشكلة في عدم قدرة ذوي الإعاقة الحصول على هذه الثياب لندرتها، وفي سبيل
-                            إتاحتها للجميع خاصة ذوي الإعاقات الشديدة، فإن قضية هذا التحدي تتمحور حول إيجاد حلول
-                            ابتكارية لتوفير ملابس تُناسب نمط حياتهم.
+                            {{ $data['description'] }}
                         </p>
                     </div>
                 </div>
@@ -65,9 +61,9 @@
                     >
                         <div class="absolute top-0 left-0 z-0 w-full h-full">
                             <img
-                                class="object-cover object-center w-full h-full lg:object-[70%] md:object-[60%]"
-                                src="{{ $page->asset('images/about-section.png') }}"
-                                alt="about-section"
+                                class="object-cover object-center w-full h-full"
+                                src="{{ $page->asset($data['image']) }}"
+                                alt="{{ str($data['image'])->before('.')->afterLast('/') }}"
                             />
                         </div>
                     </div>

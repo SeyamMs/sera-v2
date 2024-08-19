@@ -1,44 +1,54 @@
 @php
     $paths = [
         [
-            'title' => 'تعزيز <br /> رضا المستهلك',
+            'title' => 'رضا المستهلك',
             'image' => 'images/paths-1.jpg',
             'col_class' => '',
             'wrapper_class' => 'lg:ml-0 ml-auto mr-auto',
             'challenges' => [
-                'إيجاد حلول لإدارة الطاقة الشخصية للمستهلكين',
-                'تطوير منصات لتعزيز التفاعل والرضا لدى العملاء',
-                'تصميم حلول مبتكرة لفوترة الطاقة وشفافية الاستخدام',
+                [
+                    'title' => 'تحسين تجربة المستهلك',
+                    'link' => '/paths/1-1-improving-consumer-experience',
+                ],
+                [
+                    'title' => 'تعزيز أمن وسلامة المستهلكين لخدمات الكهرباء',
+                    'link' => '/paths/1-2-enhancing-consumer-safety-and-security',
+                ],
             ],
         ],
         [
-            'title' => 'دمج <br /> الطاقة المتجددة',
+            'title' => 'دمج الطاقة',
             'image' => 'images/paths-2.jpg',
             'col_class' => 'xl:order-none lg:order-last',
             'wrapper_class' => 'xl:ml-auto lg:ml-0 ml-auto mr-auto',
             'challenges' => [
-                'دمج مصادر الطاقة المتجددة بكفاءة في شبكة الطاقة الحالية',
-                'تطوير تقنيات تخزين الطاقة لإدارة التقطع في مصادر الطاقة المتجددة',
-                'تحقيق التوازن الأمثل بين الأحمال باستخدام مزيج من المصادر المتجددة وغير المتجددة',
-                'تحقيق التوازن الأمثل بين الأحمال باستخدام مزيج من المصادر المتجددة وغير المتجددة',
+                [
+                    'title' => 'حلول ابتكارية للمولدات الاحتياطية وتخزين الطاقة',
+                    'link' => '/paths/2-1-innovative-solutions-for-backup-generators-and-energy-storage',
+                ],
+                [
+                    'title' => 'دمج مصادر الطاقة المتجددة وغير المتجددة بكفاءة',
+                    'link' => '/paths/2-2-efficient-integration-of-renewable-and-non-renewable-energy-sources',
+                ],
             ],
         ],
         [
-            'title' => 'إدارة البيانات <br /> الضخمة والتحليل',
+            'title' => 'التقنيات الناشئة',
             'image' => 'images/paths-3.jpg',
             'col_class' => '',
             'wrapper_class' => 'lg:mr-0 ml-auto mr-auto',
             'challenges' => [
-                'أدوات لتحليل البيانات الكبيرة من الشبكات الكهربائية',
-                'تقنيات لتجميع وتخزين البيانات بشكل آمن وفعال',
-                'تطوير نظم لتحليل البيانات التنبؤية لتحسين أداء الشبكات',
+                [
+                    'title' => 'التقنيات الناشئة',
+                    'link' => '/paths/3-1-emerging-technologies',
+                ],
             ],
         ],
     ];
 @endphp
 
 <section
-    class="relative flex min-h-[1453px] items-center overflow-hidden bg-[#230C44]"
+    class="relative flex min-h-[1179px] items-center overflow-hidden bg-[#230C44]"
     id="paths-section"
     x-data="{ shown: false }"
     x-intersect.threshold.20="shown = true"
@@ -59,7 +69,6 @@
                 المسارات والتحديات
             </h2>
 
-
             <div class="grid grid-cols-6 gap-6">
 
                 @foreach ($paths as $index => $path)
@@ -69,7 +78,7 @@
                             x-show="shown"
                             x-transition:enter-end="opacity-100 translate-y-0"
                             x-transition:enter-start="opacity-0 -translate-y-10"
-                            x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 600 }}ms]"
+                            x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 300 + 300 }}ms]"
                             x-transition:leave-end="opacity-0 -translate-y-10"
                             x-transition:leave-start="opacity-100 translate-y-0"
                             x-transition:leave="transition transform ease-in duration-300"
@@ -79,7 +88,7 @@
                                 x-show="shown"
                                 x-transition:enter-end="opacity-100 translate-y-0"
                                 x-transition:enter-start="opacity-0 -translate-y-10"
-                                x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 800 }}ms]"
+                                x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 300 + 500 }}ms]"
                                 x-transition:leave-end="opacity-0 -translate-y-10"
                                 x-transition:leave-start="opacity-100 translate-y-0"
                                 x-transition:leave="transition transform ease-in duration-300"
@@ -92,7 +101,7 @@
                                     x-show="shown"
                                     x-transition:enter-end="opacity-100 translate-y-0"
                                     x-transition:enter-start="opacity-0 -translate-y-10"
-                                    x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 1000 }}ms]"
+                                    x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 300 + 700 }}ms]"
                                     x-transition:leave-end="opacity-0 -translate-y-10"
                                     x-transition:leave-start="opacity-100 translate-y-0"
                                     x-transition:leave="transition transform ease-in duration-300"
@@ -110,7 +119,7 @@
                                     x-show="shown"
                                     x-transition:enter-end="opacity-100 translate-x-0"
                                     x-transition:enter-start="opacity-0 translate-x-10"
-                                    x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 1200 }}ms]"
+                                    x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 300 + 1000 }}ms]"
                                     x-transition:leave-end="opacity-0 translate-x-10"
                                     x-transition:leave-start="opacity-100 translate-x-0"
                                     x-transition:leave="transition transform ease-in duration-300"
@@ -121,11 +130,11 @@
                                 @foreach ($path['challenges'] as $index => $challenge)
                                     <a
                                         class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="{{ $page->baseUrl }}/path"
+                                        href="{{ $page->baseUrl }}{{ $challenge['link'] }}"
                                         x-show="shown"
                                         x-transition:enter-end="opacity-100 translate-x-0"
                                         x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->parent->iteration * 1200 + $loop->iteration * 100 }}ms]"
+                                        x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->parent->iteration * 300 + 1000 + $loop->iteration * 100 }}ms]"
                                         x-transition:leave-end="opacity-0 translate-x-10"
                                         x-transition:leave-start="opacity-100 translate-x-0"
                                         x-transition:leave="transition transform ease-in duration-300"
@@ -135,7 +144,7 @@
                                             x-show="shown"
                                             x-transition:enter-end="opacity-100 translate-x-0"
                                             x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->parent->iteration * 1200 + $loop->iteration * 200 }}ms]"
+                                            x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->parent->iteration * 300 + 1000 + $loop->iteration * 200 }}ms]"
                                             x-transition:leave-end="opacity-0 translate-x-10"
                                             x-transition:leave-start="opacity-100 translate-x-0"
                                             x-transition:leave="transition transform ease-in duration-300"
@@ -145,7 +154,7 @@
                                                 x-show="shown"
                                                 x-transition:enter-end="opacity-100 translate-x-0"
                                                 x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->parent->iteration * 1200 + $loop->iteration * 300 }}ms]"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->parent->iteration * 300 + 1000 + $loop->iteration * 300 }}ms]"
                                                 x-transition:leave-end="opacity-0 translate-x-10"
                                                 x-transition:leave-start="opacity-100 translate-x-0"
                                                 x-transition:leave="transition transform ease-in duration-300"
@@ -158,12 +167,12 @@
                                             x-show="shown"
                                             x-transition:enter-end="opacity-100 translate-x-0"
                                             x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->parent->iteration * 1200 + $loop->iteration * 400 }}ms]"
+                                            x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->parent->iteration * 300 + 1000 + $loop->iteration * 400 }}ms]"
                                             x-transition:leave-end="opacity-0 translate-x-10"
                                             x-transition:leave-start="opacity-100 translate-x-0"
                                             x-transition:leave="transition transform ease-in duration-300"
                                         >
-                                            {{ $challenge }}
+                                            {{ $challenge['title'] }}
                                         </span>
                                     </a>
                                 @endforeach
@@ -174,9 +183,7 @@
                     </div>
                 @endforeach
 
-
             </div>
-
         </div>
     </div>
 

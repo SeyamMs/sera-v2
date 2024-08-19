@@ -46,7 +46,7 @@
 
     <!-- style -->
     <link
-        href="https://seyamms.github.io/sera-v2/assets/build/css/main.css?id=1b773534d9540bb7bcfae2e1d91aeda6"
+        href="https://seyamms.github.io/sera-v2/assets/build/css/main.css?id=6050f9863680ea9475cfe8d5d3675b4b"
         rel="stylesheet"
     />
 
@@ -83,10 +83,14 @@
     }"
     x-init="setTimeout(function() {
         loaded = true
-        if (to)
+        if (to) {
             setTimeout(function() {
                 $scroll('#' + to, { behavior: 'smooth', offset: -1 })
-            }, 300)
+                setTimeout(function() {
+                    history.pushState({}, null, window.location.href.split('?')[0]);
+                }, 300)
+            }, 500)
+        }
     }, 300)"
     :class="{ 'overflow-hidden': !loaded }"
 >
@@ -114,125 +118,124 @@
         x-cloak
         x-show="loaded"
     >
-            <section
-    class="relative flex flex-col h-screen min-h-[600px] items-center overflow-hidden bg-primary-950"
+            <header
+    class="fixed top-0 right-0 z-50 flex flex-col items-center w-full overflow-hidden"
     x-data="{ shown: false, showFixed: window.scrollY > 115 }"
     x-intersect.threshold.20="shown = true"
     x-on:scroll.window="showFixed = window.scrollY > 115"
+    :class="{ 'bg-[#0F0F0F]': showFixed }"
 >
-    
-    <div
-        class="fixed top-0 right-0 z-50 w-full"
-        :class="{ 'bg-[#0F0F0F]': showFixed }"
-    >
-        <div class="lg:px-4 lg:py-6 container relative px-2 py-3 mx-auto">
-            <div class="relative z-10 flex w-full">
-                <div class="md:justify-between flex justify-center w-full gap-4">
-                    <div
-                        class="md:block hidden w-40"
-                        x-show="shown"
-                        x-transition:enter-end="opacity-100 translate-x-0"
-                        x-transition:enter-start="opacity-0 translate-x-10"
-                        x-transition:enter="transition transform ease-out duration-300 delay-[300ms]"
-                        x-transition:leave-end="opacity-0 translate-x-10"
-                        x-transition:leave-start="opacity-100 translate-x-0"
-                        x-transition:leave="transition transform ease-in duration-300"
-                    >
-                        <img
-                            class="object-scale-down w-full h-full"
-                            src="https://seyamms.github.io/sera-v2/assets/images/white-logo.svg"
-                            alt="white-logo"
-                        />
-                    </div>
+    <div class="lg:px-4 lg:py-6 container relative px-2 py-3 mx-auto">
+        <div class="relative z-10 flex w-full">
+            <div class="md:justify-between flex justify-center w-full gap-4">
+                <div
+                    class="md:block hidden w-40"
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 translate-x-0"
+                    x-transition:enter-start="opacity-0 translate-x-10"
+                    x-transition:enter="transition transform ease-out duration-300 delay-[300ms]"
+                    x-transition:leave-end="opacity-0 translate-x-10"
+                    x-transition:leave-start="opacity-100 translate-x-0"
+                    x-transition:leave="transition transform ease-in duration-300"
+                >
+                    <img
+                        class="object-scale-down w-full h-full"
+                        src="https://seyamms.github.io/sera-v2/assets/images/white-logo.svg"
+                        alt="white-logo"
+                    />
+                </div>
 
-                    <div
-                        class="bg-opacity-15 backdrop-blur rounded-xl md:p-3 lg:p-4 flex p-2 bg-white"
-                        x-show="shown"
-                        x-transition:enter-end="opacity-100 translate-y-0"
-                        x-transition:enter-start="opacity-0 -translate-y-10"
-                        x-transition:enter="transition transform ease-out duration-300 delay-[900ms]"
-                        x-transition:leave-end="opacity-0 -translate-y-10"
-                        x-transition:leave-start="opacity-100 translate-y-0"
-                        x-transition:leave="transition transform ease-in duration-300"
-                    >
-                        <div class="lg:gap-2 flex items-center gap-1">
+                <div
+                    class="bg-opacity-15 backdrop-blur rounded-xl md:p-3 lg:p-4 flex p-2 bg-white"
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 -translate-y-10"
+                    x-transition:enter="transition transform ease-out duration-300 delay-[900ms]"
+                    x-transition:leave-end="opacity-0 -translate-y-10"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave="transition transform ease-in duration-300"
+                >
+                    <div class="lg:gap-2 flex items-center gap-1">
+                        <button
+                            class="md:text-sm flex-shrink-0 p-2 text-xs text-white"
+                            x-data
+                            x-on:click.prevent="$scroll('#about-section', {behavior: 'smooth', offset: -1})"
+                        >
+                            التعريف بإلكتراثون
+                        </button>
+                        <span class="md:block flex-shrink-0 hidden w-px h-4 bg-gray-100"></span>
+                        <button
+                            class="md:text-sm flex-shrink-0 p-2 text-xs text-white"
+                            x-data
+                            x-on:click.prevent="$scroll('#goals-section', {behavior: 'smooth', offset: -1})"
+                        >
+                            الاهداف
+                        </button>
+                        <span class="md:block flex-shrink-0 hidden w-px h-4 bg-gray-100"></span>
+                        <button
+                            class="md:text-sm flex-shrink-0 p-2 text-xs text-white"
+                            x-data
+                            x-on:click.prevent="$scroll('#paths-section', {behavior: 'smooth', offset: -1})"
+                        >
+                            المسارات
+                        </button>
+                        <span class="md:block flex-shrink-0 hidden w-px h-4 bg-gray-100"></span>
+                        <button
+                            class="md:text-sm flex-shrink-0 p-2 text-xs text-white"
+                            x-data
+                            x-on:click.prevent="$scroll('#prizes-section', {behavior: 'smooth', offset: -1})"
+                        >
+                            الجوائز
+                        </button>
+                        <div class="w-28 lg:flex items-center hidden h-8">
                             <button
-                                class="md:text-sm flex-shrink-0 p-2 text-xs text-white"
-                                x-data
-                                x-on:click.prevent="$scroll('#about-section', {behavior: 'smooth', offset: -1})"
+                                class="text-lg group hover:bg-[#6d5d8250] hover:ring-2 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-between hover:justify-center p-1 h-8 w-28 bg-white hover:text-white text-[#230C44]"
+                                data-tf-popup="Z2f34azw"
                             >
-                                التعريف بالهاكاثون
+                                <div class="flex justify-center flex-grow">
+                                    <span class="md:text-sm text-xs">
+                                        انضم الينا
+                                    </span>
+                                </div>
+                                <div
+                                    class="group-hover:hidden flex shrink-0 items-center justify-center size-7 rounded-full bg-[#230C44]">
+                                    <img
+                                        class="w-4"
+                                        src="https://seyamms.github.io/sera-v2/assets/images/icons/lamp-light.svg"
+                                        alt="lamp-light"
+                                    />
+                                </div>
                             </button>
-                            <span class="md:block flex-shrink-0 hidden w-px h-4 bg-gray-100"></span>
-                            <button
-                                class="md:text-sm flex-shrink-0 p-2 text-xs text-white"
-                                x-data
-                                x-on:click.prevent="$scroll('#goals-section', {behavior: 'smooth', offset: -1})"
-                            >
-                                الاهداف
-                            </button>
-                            <span class="md:block flex-shrink-0 hidden w-px h-4 bg-gray-100"></span>
-                            <button
-                                class="md:text-sm flex-shrink-0 p-2 text-xs text-white"
-                                x-data
-                                x-on:click.prevent="$scroll('#paths-section', {behavior: 'smooth', offset: -1})"
-                            >
-                                المسارات
-                            </button>
-                            <span class="md:block flex-shrink-0 hidden w-px h-4 bg-gray-100"></span>
-                            <button
-                                class="md:text-sm flex-shrink-0 p-2 text-xs text-white"
-                                x-data
-                                x-on:click.prevent="$scroll('#prizes-section', {behavior: 'smooth', offset: -1})"
-                            >
-                                الجوائز
-                            </button>
-                            <div class="w-28 lg:flex items-center hidden h-8">
-                                <button
-                                    class="text-lg group hover:bg-[#6d5d8250] hover:ring-2 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-between hover:justify-center p-1 h-8 w-28 bg-white hover:text-white text-[#230C44]"
-                                    data-tf-popup="Z2f34azw"
-                                >
-                                    <div class="flex justify-center flex-grow">
-                                        <span class="md:text-sm text-xs">
-                                            انضم الينا
-                                        </span>
-                                    </div>
-                                    <div
-                                        class="group-hover:hidden flex shrink-0 items-center justify-center size-7 rounded-full bg-[#230C44]">
-                                        <img
-                                            class="w-4"
-                                            src="https://seyamms.github.io/sera-v2/assets/images/icons/lamp-light.svg"
-                                            alt="lamp-light"
-                                        />
-                                    </div>
-                                </button>
-                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div
-                        class="md:block hidden w-40"
-                        x-show="shown"
-                        x-transition:enter-end="opacity-100 translate-x-0"
-                        x-transition:enter-start="opacity-0 -translate-x-10"
-                        x-transition:enter="transition transform ease-out duration-300 delay-[600ms]"
-                        x-transition:leave-end="opacity-0 -translate-x-10"
-                        x-transition:leave-start="opacity-100 translate-x-0"
-                        x-transition:leave="transition transform ease-in duration-300"
-                    >
-                        <img
-                            class="object-scale-down w-full h-full"
-                            src="https://seyamms.github.io/sera-v2/assets/images/electrathon-logo.svg"
-                            alt="electrathod-logo"
-                        />
-                    </div>
+                <div
+                    class="md:block hidden w-40"
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 translate-x-0"
+                    x-transition:enter-start="opacity-0 -translate-x-10"
+                    x-transition:enter="transition transform ease-out duration-300 delay-[600ms]"
+                    x-transition:leave-end="opacity-0 -translate-x-10"
+                    x-transition:leave-start="opacity-100 translate-x-0"
+                    x-transition:leave="transition transform ease-in duration-300"
+                >
+                    <img
+                        class="object-scale-down w-full h-full"
+                        src="https://seyamms.github.io/sera-v2/assets/images/electrathon-logo.svg"
+                        alt="electrathod-logo"
+                    />
                 </div>
             </div>
-
         </div>
-    </div>
 
-    
+    </div>
+</header>
+    <section
+    class="relative flex flex-col h-screen min-h-[600px] items-center overflow-hidden bg-primary-950"
+    x-data="{ shown: false, showFixed: window.scrollY > 115 }"
+    x-intersect.threshold.20="shown = true"
+>
     <div class="py-14 lg:px-12 md:px-8 relative z-10 w-full h-full px-4">
         <div class="flex flex-col items-start justify-end h-full">
             <div
@@ -281,10 +284,10 @@
         </div>
     </div>
 
-    
     <div class="bg-gradient-to-b from-primary-950 to-transparent absolute top-0 left-0 z-0 w-full h-full">
         <video
             class="object-cover w-full h-full"
+            poster="https://seyamms.github.io/sera-v2/assets/videos/main-section.jpg"
             autoplay
             muted
             loop
@@ -334,7 +337,7 @@
 
                     <div
                         class="border-s-[3px] px-1 flex-shrink-0 flex border-[#10D07F] bg-gradient-to-r from-[#10D07F52] to-[#10D07F0A]">
-                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">هاكاثون 2024</h2>
+                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">إلكتراثون 2024</h2>
                     </div>
                 </div>
             </div>
@@ -376,7 +379,7 @@
 
                     <div
                         class="border-s-[3px] px-1 flex-shrink-0 flex border-[#10D07F] bg-gradient-to-r from-[#10D07F52] to-[#10D07F0A]">
-                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">هاكاثون 2024</h2>
+                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">إلكتراثون 2024</h2>
                     </div>
                 </div>
             </div>
@@ -476,7 +479,7 @@
     <div class="bg-opacity-10 absolute top-0 left-0 z-0 w-full h-full">
         <img
             class="object-cover object-center w-full h-full"
-            src="https://seyamms.github.io/sera-v2/assets/images/sera-section.png"
+            src="https://seyamms.github.io/sera-v2/assets/images/sera-section.jpg"
             alt="sera-section"
         />
     </div>
@@ -581,7 +584,7 @@
                         <div class="absolute top-0 left-0 z-0 w-full h-full">
                             <img
                                 class="object-cover object-center w-full h-full lg:object-[70%] md:object-[60%]"
-                                src="https://seyamms.github.io/sera-v2/assets/images/about-section.png"
+                                src="https://seyamms.github.io/sera-v2/assets/images/about-section.jpg"
                                 alt="about-section"
                             />
                         </div>
@@ -625,12 +628,13 @@
                     >
                         <video
                             class="absolute top-0 left-0 z-0 object-cover w-full h-full"
+                            poster="https://seyamms.github.io/sera-v2/assets/videos/goals-section.jpg"
                             autoplay
                             muted
                             loop
                         >
                             <source
-                                src="https://seyamms.github.io/sera-v2/assets/videos/targets-section.mp4"
+                                src="https://seyamms.github.io/sera-v2/assets/videos/goals-section.mp4"
                                 type="video/mp4"
                             />
                         </video>
@@ -803,7 +807,7 @@
     </div>
 </section>
     <section
-    class="relative flex min-h-[1453px] items-center overflow-hidden bg-[#230C44]"
+    class="relative flex min-h-[1179px] items-center overflow-hidden bg-[#230C44]"
     id="paths-section"
     x-data="{ shown: false }"
     x-intersect.threshold.20="shown = true"
@@ -823,7 +827,6 @@
             >
                 المسارات والتحديات
             </h2>
-
 
             <div class="grid grid-cols-6 gap-6">
 
@@ -848,7 +851,7 @@
                                 x-transition:leave-start="opacity-100 translate-y-0"
                                 x-transition:leave="transition transform ease-in duration-300"
                             >
-                                تعزيز <br /> رضا المستهلك
+                                رضا المستهلك
                             </h3>
                             <div class="md:px-8 md:py-10 w-full px-4 py-6 mx-auto">
                                 <div
@@ -874,7 +877,7 @@
                                     x-show="shown"
                                     x-transition:enter-end="opacity-100 translate-x-0"
                                     x-transition:enter-start="opacity-0 translate-x-10"
-                                    x-transition:enter="transition transform ease-out duration-300 delay-[1200ms]"
+                                    x-transition:enter="transition transform ease-out duration-300 delay-[1300ms]"
                                     x-transition:leave-end="opacity-0 translate-x-10"
                                     x-transition:leave-start="opacity-100 translate-x-0"
                                     x-transition:leave="transition transform ease-in duration-300"
@@ -884,54 +887,7 @@
 
                                                                     <a
                                         class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="https://seyamms.github.io/sera-v2/path"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[1300ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        <div
-                                            class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[1400ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            <span
-                                                class="text-white text-[26px] font-bold"
-                                                x-show="shown"
-                                                x-transition:enter-end="opacity-100 translate-x-0"
-                                                x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[1500ms]"
-                                                x-transition:leave-end="opacity-0 translate-x-10"
-                                                x-transition:leave-start="opacity-100 translate-x-0"
-                                                x-transition:leave="transition transform ease-in duration-300"
-                                            >
-                                                01
-                                            </span>
-                                        </div>
-                                        <span
-                                            class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] text-justify max-w-64"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[1600ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            إيجاد حلول لإدارة الطاقة الشخصية للمستهلكين
-                                        </span>
-                                    </a>
-                                                                    <a
-                                        class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="https://seyamms.github.io/sera-v2/path"
+                                        href="https://seyamms.github.io/sera-v2/paths/1-1-improving-consumer-experience"
                                         x-show="shown"
                                         x-transition:enter-end="opacity-100 translate-x-0"
                                         x-transition:enter-start="opacity-0 translate-x-10"
@@ -945,7 +901,7 @@
                                             x-show="shown"
                                             x-transition:enter-end="opacity-100 translate-x-0"
                                             x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[1600ms]"
+                                            x-transition:enter="transition transform ease-out duration-300 delay-[1500ms]"
                                             x-transition:leave-end="opacity-0 translate-x-10"
                                             x-transition:leave-start="opacity-100 translate-x-0"
                                             x-transition:leave="transition transform ease-in duration-300"
@@ -955,7 +911,54 @@
                                                 x-show="shown"
                                                 x-transition:enter-end="opacity-100 translate-x-0"
                                                 x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[1800ms]"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[1600ms]"
+                                                x-transition:leave-end="opacity-0 translate-x-10"
+                                                x-transition:leave-start="opacity-100 translate-x-0"
+                                                x-transition:leave="transition transform ease-in duration-300"
+                                            >
+                                                01
+                                            </span>
+                                        </div>
+                                        <span
+                                            class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] text-justify max-w-64"
+                                            x-show="shown"
+                                            x-transition:enter-end="opacity-100 translate-x-0"
+                                            x-transition:enter-start="opacity-0 translate-x-10"
+                                            x-transition:enter="transition transform ease-out duration-300 delay-[1700ms]"
+                                            x-transition:leave-end="opacity-0 translate-x-10"
+                                            x-transition:leave-start="opacity-100 translate-x-0"
+                                            x-transition:leave="transition transform ease-in duration-300"
+                                        >
+                                            تحسين تجربة المستهلك
+                                        </span>
+                                    </a>
+                                                                    <a
+                                        class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
+                                        href="https://seyamms.github.io/sera-v2/paths/1-2-enhancing-consumer-safety-and-security"
+                                        x-show="shown"
+                                        x-transition:enter-end="opacity-100 translate-x-0"
+                                        x-transition:enter-start="opacity-0 translate-x-10"
+                                        x-transition:enter="transition transform ease-out duration-300 delay-[1500ms]"
+                                        x-transition:leave-end="opacity-0 translate-x-10"
+                                        x-transition:leave-start="opacity-100 translate-x-0"
+                                        x-transition:leave="transition transform ease-in duration-300"
+                                    >
+                                        <div
+                                            class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
+                                            x-show="shown"
+                                            x-transition:enter-end="opacity-100 translate-x-0"
+                                            x-transition:enter-start="opacity-0 translate-x-10"
+                                            x-transition:enter="transition transform ease-out duration-300 delay-[1700ms]"
+                                            x-transition:leave-end="opacity-0 translate-x-10"
+                                            x-transition:leave-start="opacity-100 translate-x-0"
+                                            x-transition:leave="transition transform ease-in duration-300"
+                                        >
+                                            <span
+                                                class="text-white text-[26px] font-bold"
+                                                x-show="shown"
+                                                x-transition:enter-end="opacity-100 translate-x-0"
+                                                x-transition:enter-start="opacity-0 translate-x-10"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[1900ms]"
                                                 x-transition:leave-end="opacity-0 translate-x-10"
                                                 x-transition:leave-start="opacity-100 translate-x-0"
                                                 x-transition:leave="transition transform ease-in duration-300"
@@ -968,21 +971,81 @@
                                             x-show="shown"
                                             x-transition:enter-end="opacity-100 translate-x-0"
                                             x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[2000ms]"
+                                            x-transition:enter="transition transform ease-out duration-300 delay-[2100ms]"
                                             x-transition:leave-end="opacity-0 translate-x-10"
                                             x-transition:leave-start="opacity-100 translate-x-0"
                                             x-transition:leave="transition transform ease-in duration-300"
                                         >
-                                            تطوير منصات لتعزيز التفاعل والرضا لدى العملاء
+                                            تعزيز أمن وسلامة المستهلكين لخدمات الكهرباء
                                         </span>
                                     </a>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="xl:col-span-2 lg:col-span-3 col-span-6 xl:order-none lg:order-last">
+                        <div
+                            class="bg-[#FFFFFF26] rounded-3xl max-w-md flex flex-col overflow-hidden md:pt-8 pt-4 xl:ml-auto lg:ml-0 ml-auto mr-auto"
+                            x-show="shown"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:enter-start="opacity-0 -translate-y-10"
+                            x-transition:enter="transition transform ease-out duration-300 delay-[900ms]"
+                            x-transition:leave-end="opacity-0 -translate-y-10"
+                            x-transition:leave-start="opacity-100 translate-y-0"
+                            x-transition:leave="transition transform ease-in duration-300"
+                        >
+                            <h3
+                                class="text-white lg:text-[44px] md:text-[40px] text-[32px] leading-[50px] font-semibold text-center"
+                                x-show="shown"
+                                x-transition:enter-end="opacity-100 translate-y-0"
+                                x-transition:enter-start="opacity-0 -translate-y-10"
+                                x-transition:enter="transition transform ease-out duration-300 delay-[1100ms]"
+                                x-transition:leave-end="opacity-0 -translate-y-10"
+                                x-transition:leave-start="opacity-100 translate-y-0"
+                                x-transition:leave="transition transform ease-in duration-300"
+                            >
+                                دمج الطاقة
+                            </h3>
+                            <div class="md:px-8 md:py-10 w-full px-4 py-6 mx-auto">
+                                <div
+                                    class="w-full flex aspect-square h-full max-w-[308px] mx-auto rounded-[33px] overflow-hidden"
+                                    x-show="shown"
+                                    x-transition:enter-end="opacity-100 translate-y-0"
+                                    x-transition:enter-start="opacity-0 -translate-y-10"
+                                    x-transition:enter="transition transform ease-out duration-300 delay-[1300ms]"
+                                    x-transition:leave-end="opacity-0 -translate-y-10"
+                                    x-transition:leave-start="opacity-100 translate-y-0"
+                                    x-transition:leave="transition transform ease-in duration-300"
+                                >
+                                    <img
+                                        class="object-cover object-center w-full h-full"
+                                        src="https://seyamms.github.io/sera-v2/assets/images/paths-2.jpg"
+                                        alt="paths-2"
+                                    />
+                                </div>
+                            </div>
+                            <div class="md:gap-8 md:px-8 md:pt-8 md:pb-10 flex flex-col gap-4 px-4 pt-2 mb-6">
+                                <h4
+                                    class="text-2xl text-[#FFFFFF99] font-semibold"
+                                    x-show="shown"
+                                    x-transition:enter-end="opacity-100 translate-x-0"
+                                    x-transition:enter-start="opacity-0 translate-x-10"
+                                    x-transition:enter="transition transform ease-out duration-300 delay-[1600ms]"
+                                    x-transition:leave-end="opacity-0 translate-x-10"
+                                    x-transition:leave-start="opacity-100 translate-x-0"
+                                    x-transition:leave="transition transform ease-in duration-300"
+                                >
+                                    إختر المسار وشاهد التفاصيل
+                                </h4>
+
                                                                     <a
                                         class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="https://seyamms.github.io/sera-v2/path"
+                                        href="https://seyamms.github.io/sera-v2/paths/2-1-innovative-solutions-for-backup-generators-and-energy-storage"
                                         x-show="shown"
                                         x-transition:enter-end="opacity-100 translate-x-0"
                                         x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[1500ms]"
+                                        x-transition:enter="transition transform ease-out duration-300 delay-[1700ms]"
                                         x-transition:leave-end="opacity-0 translate-x-10"
                                         x-transition:leave-start="opacity-100 translate-x-0"
                                         x-transition:leave="transition transform ease-in duration-300"
@@ -1002,114 +1065,7 @@
                                                 x-show="shown"
                                                 x-transition:enter-end="opacity-100 translate-x-0"
                                                 x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[2100ms]"
-                                                x-transition:leave-end="opacity-0 translate-x-10"
-                                                x-transition:leave-start="opacity-100 translate-x-0"
-                                                x-transition:leave="transition transform ease-in duration-300"
-                                            >
-                                                03
-                                            </span>
-                                        </div>
-                                        <span
-                                            class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] text-justify max-w-64"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[2400ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            تصميم حلول مبتكرة لفوترة الطاقة وشفافية الاستخدام
-                                        </span>
-                                    </a>
-                                
-
-                            </div>
-                        </div>
-                    </div>
-                                    <div class="xl:col-span-2 lg:col-span-3 col-span-6 xl:order-none lg:order-last">
-                        <div
-                            class="bg-[#FFFFFF26] rounded-3xl max-w-md flex flex-col overflow-hidden md:pt-8 pt-4 xl:ml-auto lg:ml-0 ml-auto mr-auto"
-                            x-show="shown"
-                            x-transition:enter-end="opacity-100 translate-y-0"
-                            x-transition:enter-start="opacity-0 -translate-y-10"
-                            x-transition:enter="transition transform ease-out duration-300 delay-[1200ms]"
-                            x-transition:leave-end="opacity-0 -translate-y-10"
-                            x-transition:leave-start="opacity-100 translate-y-0"
-                            x-transition:leave="transition transform ease-in duration-300"
-                        >
-                            <h3
-                                class="text-white lg:text-[44px] md:text-[40px] text-[32px] leading-[50px] font-semibold text-center"
-                                x-show="shown"
-                                x-transition:enter-end="opacity-100 translate-y-0"
-                                x-transition:enter-start="opacity-0 -translate-y-10"
-                                x-transition:enter="transition transform ease-out duration-300 delay-[1600ms]"
-                                x-transition:leave-end="opacity-0 -translate-y-10"
-                                x-transition:leave-start="opacity-100 translate-y-0"
-                                x-transition:leave="transition transform ease-in duration-300"
-                            >
-                                دمج <br /> الطاقة المتجددة
-                            </h3>
-                            <div class="md:px-8 md:py-10 w-full px-4 py-6 mx-auto">
-                                <div
-                                    class="w-full flex aspect-square h-full max-w-[308px] mx-auto rounded-[33px] overflow-hidden"
-                                    x-show="shown"
-                                    x-transition:enter-end="opacity-100 translate-y-0"
-                                    x-transition:enter-start="opacity-0 -translate-y-10"
-                                    x-transition:enter="transition transform ease-out duration-300 delay-[2000ms]"
-                                    x-transition:leave-end="opacity-0 -translate-y-10"
-                                    x-transition:leave-start="opacity-100 translate-y-0"
-                                    x-transition:leave="transition transform ease-in duration-300"
-                                >
-                                    <img
-                                        class="object-cover object-center w-full h-full"
-                                        src="https://seyamms.github.io/sera-v2/assets/images/paths-2.jpg"
-                                        alt="paths-2"
-                                    />
-                                </div>
-                            </div>
-                            <div class="md:gap-8 md:px-8 md:pt-8 md:pb-10 flex flex-col gap-4 px-4 pt-2 mb-6">
-                                <h4
-                                    class="text-2xl text-[#FFFFFF99] font-semibold"
-                                    x-show="shown"
-                                    x-transition:enter-end="opacity-100 translate-x-0"
-                                    x-transition:enter-start="opacity-0 translate-x-10"
-                                    x-transition:enter="transition transform ease-out duration-300 delay-[2400ms]"
-                                    x-transition:leave-end="opacity-0 translate-x-10"
-                                    x-transition:leave-start="opacity-100 translate-x-0"
-                                    x-transition:leave="transition transform ease-in duration-300"
-                                >
-                                    إختر المسار وشاهد التفاصيل
-                                </h4>
-
-                                                                    <a
-                                        class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="https://seyamms.github.io/sera-v2/path"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[2500ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        <div
-                                            class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[2600ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            <span
-                                                class="text-white text-[26px] font-bold"
-                                                x-show="shown"
-                                                x-transition:enter-end="opacity-100 translate-x-0"
-                                                x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[2700ms]"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[1900ms]"
                                                 x-transition:leave-end="opacity-0 translate-x-10"
                                                 x-transition:leave-start="opacity-100 translate-x-0"
                                                 x-transition:leave="transition transform ease-in duration-300"
@@ -1122,21 +1078,21 @@
                                             x-show="shown"
                                             x-transition:enter-end="opacity-100 translate-x-0"
                                             x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[2800ms]"
+                                            x-transition:enter="transition transform ease-out duration-300 delay-[2000ms]"
                                             x-transition:leave-end="opacity-0 translate-x-10"
                                             x-transition:leave-start="opacity-100 translate-x-0"
                                             x-transition:leave="transition transform ease-in duration-300"
                                         >
-                                            دمج مصادر الطاقة المتجددة بكفاءة في شبكة الطاقة الحالية
+                                            حلول ابتكارية للمولدات الاحتياطية وتخزين الطاقة
                                         </span>
                                     </a>
                                                                     <a
                                         class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="https://seyamms.github.io/sera-v2/path"
+                                        href="https://seyamms.github.io/sera-v2/paths/2-2-efficient-integration-of-renewable-and-non-renewable-energy-sources"
                                         x-show="shown"
                                         x-transition:enter-end="opacity-100 translate-x-0"
                                         x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[2600ms]"
+                                        x-transition:enter="transition transform ease-out duration-300 delay-[1800ms]"
                                         x-transition:leave-end="opacity-0 translate-x-10"
                                         x-transition:leave-start="opacity-100 translate-x-0"
                                         x-transition:leave="transition transform ease-in duration-300"
@@ -1146,7 +1102,7 @@
                                             x-show="shown"
                                             x-transition:enter-end="opacity-100 translate-x-0"
                                             x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[2800ms]"
+                                            x-transition:enter="transition transform ease-out duration-300 delay-[2000ms]"
                                             x-transition:leave-end="opacity-0 translate-x-10"
                                             x-transition:leave-start="opacity-100 translate-x-0"
                                             x-transition:leave="transition transform ease-in duration-300"
@@ -1156,7 +1112,7 @@
                                                 x-show="shown"
                                                 x-transition:enter-end="opacity-100 translate-x-0"
                                                 x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[3000ms]"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[2200ms]"
                                                 x-transition:leave-end="opacity-0 translate-x-10"
                                                 x-transition:leave-start="opacity-100 translate-x-0"
                                                 x-transition:leave="transition transform ease-in duration-300"
@@ -1169,106 +1125,12 @@
                                             x-show="shown"
                                             x-transition:enter-end="opacity-100 translate-x-0"
                                             x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[3200ms]"
+                                            x-transition:enter="transition transform ease-out duration-300 delay-[2400ms]"
                                             x-transition:leave-end="opacity-0 translate-x-10"
                                             x-transition:leave-start="opacity-100 translate-x-0"
                                             x-transition:leave="transition transform ease-in duration-300"
                                         >
-                                            تطوير تقنيات تخزين الطاقة لإدارة التقطع في مصادر الطاقة المتجددة
-                                        </span>
-                                    </a>
-                                                                    <a
-                                        class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="https://seyamms.github.io/sera-v2/path"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[2700ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        <div
-                                            class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[3000ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            <span
-                                                class="text-white text-[26px] font-bold"
-                                                x-show="shown"
-                                                x-transition:enter-end="opacity-100 translate-x-0"
-                                                x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[3300ms]"
-                                                x-transition:leave-end="opacity-0 translate-x-10"
-                                                x-transition:leave-start="opacity-100 translate-x-0"
-                                                x-transition:leave="transition transform ease-in duration-300"
-                                            >
-                                                03
-                                            </span>
-                                        </div>
-                                        <span
-                                            class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] text-justify max-w-64"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[3600ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            تحقيق التوازن الأمثل بين الأحمال باستخدام مزيج من المصادر المتجددة وغير المتجددة
-                                        </span>
-                                    </a>
-                                                                    <a
-                                        class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="https://seyamms.github.io/sera-v2/path"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[2800ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        <div
-                                            class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[3200ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            <span
-                                                class="text-white text-[26px] font-bold"
-                                                x-show="shown"
-                                                x-transition:enter-end="opacity-100 translate-x-0"
-                                                x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[3600ms]"
-                                                x-transition:leave-end="opacity-0 translate-x-10"
-                                                x-transition:leave-start="opacity-100 translate-x-0"
-                                                x-transition:leave="transition transform ease-in duration-300"
-                                            >
-                                                04
-                                            </span>
-                                        </div>
-                                        <span
-                                            class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] text-justify max-w-64"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[4000ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            تحقيق التوازن الأمثل بين الأحمال باستخدام مزيج من المصادر المتجددة وغير المتجددة
+                                            دمج مصادر الطاقة المتجددة وغير المتجددة بكفاءة
                                         </span>
                                     </a>
                                 
@@ -1282,7 +1144,7 @@
                             x-show="shown"
                             x-transition:enter-end="opacity-100 translate-y-0"
                             x-transition:enter-start="opacity-0 -translate-y-10"
-                            x-transition:enter="transition transform ease-out duration-300 delay-[1800ms]"
+                            x-transition:enter="transition transform ease-out duration-300 delay-[1200ms]"
                             x-transition:leave-end="opacity-0 -translate-y-10"
                             x-transition:leave-start="opacity-100 translate-y-0"
                             x-transition:leave="transition transform ease-in duration-300"
@@ -1292,12 +1154,12 @@
                                 x-show="shown"
                                 x-transition:enter-end="opacity-100 translate-y-0"
                                 x-transition:enter-start="opacity-0 -translate-y-10"
-                                x-transition:enter="transition transform ease-out duration-300 delay-[2400ms]"
+                                x-transition:enter="transition transform ease-out duration-300 delay-[1400ms]"
                                 x-transition:leave-end="opacity-0 -translate-y-10"
                                 x-transition:leave-start="opacity-100 translate-y-0"
                                 x-transition:leave="transition transform ease-in duration-300"
                             >
-                                إدارة البيانات <br /> الضخمة والتحليل
+                                التقنيات الناشئة
                             </h3>
                             <div class="md:px-8 md:py-10 w-full px-4 py-6 mx-auto">
                                 <div
@@ -1305,7 +1167,7 @@
                                     x-show="shown"
                                     x-transition:enter-end="opacity-100 translate-y-0"
                                     x-transition:enter-start="opacity-0 -translate-y-10"
-                                    x-transition:enter="transition transform ease-out duration-300 delay-[3000ms]"
+                                    x-transition:enter="transition transform ease-out duration-300 delay-[1600ms]"
                                     x-transition:leave-end="opacity-0 -translate-y-10"
                                     x-transition:leave-start="opacity-100 translate-y-0"
                                     x-transition:leave="transition transform ease-in duration-300"
@@ -1323,7 +1185,7 @@
                                     x-show="shown"
                                     x-transition:enter-end="opacity-100 translate-x-0"
                                     x-transition:enter-start="opacity-0 translate-x-10"
-                                    x-transition:enter="transition transform ease-out duration-300 delay-[3600ms]"
+                                    x-transition:enter="transition transform ease-out duration-300 delay-[1900ms]"
                                     x-transition:leave-end="opacity-0 translate-x-10"
                                     x-transition:leave-start="opacity-100 translate-x-0"
                                     x-transition:leave="transition transform ease-in duration-300"
@@ -1333,11 +1195,11 @@
 
                                                                     <a
                                         class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="https://seyamms.github.io/sera-v2/path"
+                                        href="https://seyamms.github.io/sera-v2/paths/3-1-emerging-technologies"
                                         x-show="shown"
                                         x-transition:enter-end="opacity-100 translate-x-0"
                                         x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[3700ms]"
+                                        x-transition:enter="transition transform ease-out duration-300 delay-[2000ms]"
                                         x-transition:leave-end="opacity-0 translate-x-10"
                                         x-transition:leave-start="opacity-100 translate-x-0"
                                         x-transition:leave="transition transform ease-in duration-300"
@@ -1347,7 +1209,7 @@
                                             x-show="shown"
                                             x-transition:enter-end="opacity-100 translate-x-0"
                                             x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[3800ms]"
+                                            x-transition:enter="transition transform ease-out duration-300 delay-[2100ms]"
                                             x-transition:leave-end="opacity-0 translate-x-10"
                                             x-transition:leave-start="opacity-100 translate-x-0"
                                             x-transition:leave="transition transform ease-in duration-300"
@@ -1357,7 +1219,7 @@
                                                 x-show="shown"
                                                 x-transition:enter-end="opacity-100 translate-x-0"
                                                 x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[3900ms]"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[2200ms]"
                                                 x-transition:leave-end="opacity-0 translate-x-10"
                                                 x-transition:leave-start="opacity-100 translate-x-0"
                                                 x-transition:leave="transition transform ease-in duration-300"
@@ -1370,106 +1232,12 @@
                                             x-show="shown"
                                             x-transition:enter-end="opacity-100 translate-x-0"
                                             x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[4000ms]"
+                                            x-transition:enter="transition transform ease-out duration-300 delay-[2300ms]"
                                             x-transition:leave-end="opacity-0 translate-x-10"
                                             x-transition:leave-start="opacity-100 translate-x-0"
                                             x-transition:leave="transition transform ease-in duration-300"
                                         >
-                                            أدوات لتحليل البيانات الكبيرة من الشبكات الكهربائية
-                                        </span>
-                                    </a>
-                                                                    <a
-                                        class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="https://seyamms.github.io/sera-v2/path"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[3800ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        <div
-                                            class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[4000ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            <span
-                                                class="text-white text-[26px] font-bold"
-                                                x-show="shown"
-                                                x-transition:enter-end="opacity-100 translate-x-0"
-                                                x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[4200ms]"
-                                                x-transition:leave-end="opacity-0 translate-x-10"
-                                                x-transition:leave-start="opacity-100 translate-x-0"
-                                                x-transition:leave="transition transform ease-in duration-300"
-                                            >
-                                                02
-                                            </span>
-                                        </div>
-                                        <span
-                                            class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] text-justify max-w-64"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[4400ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            تقنيات لتجميع وتخزين البيانات بشكل آمن وفعال
-                                        </span>
-                                    </a>
-                                                                    <a
-                                        class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="https://seyamms.github.io/sera-v2/path"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[3900ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        <div
-                                            class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[4200ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            <span
-                                                class="text-white text-[26px] font-bold"
-                                                x-show="shown"
-                                                x-transition:enter-end="opacity-100 translate-x-0"
-                                                x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[4500ms]"
-                                                x-transition:leave-end="opacity-0 translate-x-10"
-                                                x-transition:leave-start="opacity-100 translate-x-0"
-                                                x-transition:leave="transition transform ease-in duration-300"
-                                            >
-                                                03
-                                            </span>
-                                        </div>
-                                        <span
-                                            class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] text-justify max-w-64"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[4800ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            تطوير نظم لتحليل البيانات التنبؤية لتحسين أداء الشبكات
+                                            التقنيات الناشئة
                                         </span>
                                     </a>
                                 
@@ -1478,9 +1246,7 @@
                         </div>
                     </div>
                 
-
             </div>
-
         </div>
     </div>
 
@@ -1636,200 +1402,44 @@
     x-intersect.threshold.20="shown = true"
 >
     <div class="lg:px-12 md:px-8 lg:py-20 md:py-16 relative z-10 w-full h-full px-4 py-12">
-        <div class="md:gap-16 grid grid-cols-6 gap-12">
-            <div class="md:col-span-3 flex-grow col-span-6">
-                <div class="rounded-3xl relative w-full h-full min-h-[400px] max-h-[700px] overflow-hidden">
-                    <div
-                        class="absolute top-8 right-10 z-10 w-[240px] h-[80px] bg-no-repeat bg-center bg-contain bg-[url('https://seyamms.github.io/sera-v2/assets/images/white-logo.svg')]"
-                        x-show="shown"
-                        x-transition:enter-end="opacity-100 translate-x-0"
-                        x-transition:enter-start="opacity-0 translate-x-10"
-                        x-transition:enter="transition transform ease-out duration-300 delay-[1000ms]"
-                        x-transition:leave-end="opacity-0 translate-x-10"
-                        x-transition:leave-start="opacity-100 translate-x-0"
-                        x-transition:leave="transition transform ease-in duration-300"
-                    >
-                    </div>
-                    <div
-                        class="rounded-3xl relative w-full h-full overflow-hidden"
-                        x-show="shown"
-                        x-transition:enter-end="opacity-100 translate-x-0"
-                        x-transition:enter-start="opacity-0 translate-x-10"
-                        x-transition:enter="transition transform ease-out duration-300 delay-[600ms]"
-                        x-transition:leave-end="opacity-0 translate-x-10"
-                        x-transition:leave-start="opacity-100 translate-x-0"
-                        x-transition:leave="transition transform ease-in duration-300"
-                    >
-                        <video
-                            class="absolute top-0 left-0 z-0 object-cover w-full h-full"
-                            autoplay
-                            muted
-                            loop
-                        >
-                            <source
-                                src="https://seyamms.github.io/sera-v2/assets/videos/prizes-section.mp4"
-                                type="video/mp4"
-                            />
-                        </video>
+        <div class="flex flex-col gap-8">
+            <h2
+                class="lg:text-[72px] md:text-[64px] text-[48px] max-w-screen-md mx-auto text-center font-medium text-[#1A1A1A]"
+                x-show="shown"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:enter-start="opacity-0 -translate-y-10"
+                x-transition:enter="transition transform ease-out duration-300 delay-[300ms]"
+                x-transition:leave-end="opacity-0 -translate-y-10"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave="transition transform ease-in duration-300"
+            >
+                جوائز تصل قيمتها
+                <span class="font-bold text-[#008000]">
+                    +500,000
+                </span>
+                ريال سعودي
+            </h2>
 
-                    </div>
+            <div
+                class="max-w-[834px] aspect-[834/503] mx-auto"
+                x-show="shown"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:enter-start="opacity-0 -translate-y-10"
+                x-transition:enter="transition transform ease-out duration-300 delay-[600ms]"
+                x-transition:leave-end="opacity-0 -translate-y-10"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave="transition transform ease-in duration-300"
+            >
+                <div class="w-full h-full rounded-[40px] overflow-hidden">
+                    <img
+                        class="object-cover object-center w-full h-full"
+                        src="https://seyamms.github.io/sera-v2/assets/images/prizes-section.jpg"
+                        alt="prizes-section"
+                    />
                 </div>
             </div>
 
-            <div class="md:col-span-3 col-span-6">
-                <div class="relative z-30 flex flex-col gap-10">
-                    <div class="flex flex-col gap-16">
-                        <h2
-                            class="lg:text-[80px] md:text-[72px] text-[40px] font-semibold text-[#1A1A1A]"
-                            x-show="shown"
-                            x-transition:enter-end="opacity-100 translate-y-0"
-                            x-transition:enter-start="opacity-0 -translate-y-10"
-                            x-transition:enter="transition transform ease-out duration-300 delay-[300ms]"
-                            x-transition:leave-end="opacity-0 -translate-y-10"
-                            x-transition:leave-start="opacity-100 translate-y-0"
-                            x-transition:leave="transition transform ease-in duration-300"
-                        >
-                            جوائز الهاكاثون
-                        </h2>
 
-                        <div class="flex flex-col gap-16">
-                            <div class="flex items-start max-w-md gap-6">
-                                <div class="flex items-center justify-center">
-                                    <h3
-                                        class="font-medium text-4xl text-[#1A1A1A33]"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[600ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        01
-                                    </h3>
-                                </div>
-                                <div class="flex flex-col gap-5">
-                                    <h3
-                                        class="font-medium md:text-5xl text-3xl text-[#1A1A1A]"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[700ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        المركز الاول
-                                    </h3>
-                                    <h4
-                                        class="font-bold md:text-3xl text-xl text-[#359933] text-justify"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[800ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        50,000
-                                        <span class="text-[#1A1A1A] md:text-xl text-lg font-normal">ريال سعودي</span>
-                                    </h4>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start max-w-md gap-6">
-                                <div class="flex items-center justify-center">
-                                    <h3
-                                        class="font-medium text-4xl text-[#1A1A1A33]"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[1100ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        02
-                                    </h3>
-                                </div>
-                                <div class="flex flex-col gap-5">
-                                    <h3
-                                        class="font-medium md:text-5xl text-3xl text-[#1A1A1A]"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[1200ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        المركز الثاني
-                                    </h3>
-                                    <h4
-                                        class="font-bold md:text-3xl text-xl text-[#359933] text-justify"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[1300ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        30,000
-                                        <span class="text-[#1A1A1A] md:text-xl text-lg font-normal">ريال سعودي</span>
-                                    </h4>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start max-w-md gap-6">
-                                <div class="flex items-center justify-center">
-                                    <h3
-                                        class="font-medium text-4xl text-[#1A1A1A33]"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[1600ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        03
-                                    </h3>
-                                </div>
-                                <div class="flex flex-col gap-5">
-                                    <h3
-                                        class="font-medium md:text-5xl text-3xl text-[#1A1A1A]"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[1700ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        المركز الثالث
-                                    </h3>
-                                    <h4
-                                        class="font-bold md:text-3xl text-xl text-[#359933] text-justify"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[1800ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        20,000
-                                        <span class="text-[#1A1A1A] md:text-xl text-lg font-normal">ريال سعودي</span>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="md:block hidden h-20"></div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -1983,7 +1593,7 @@
                 x-transition:leave-start="opacity-100 translate-y-0"
                 x-transition:leave="transition transform ease-in duration-300"
             >
-                رحلة الهاكاثون
+                رحلة إلكتراثون
             </h2>
 
 
@@ -2043,7 +1653,7 @@
                             x-show="shown"
                             x-transition:enter-end="opacity-100 translate-x-0"
                             x-transition:enter-start="opacity-0 -translate-x-10"
-                            x-transition:enter="transition transform ease-out duration-300 delay-[1200ms]"
+                            x-transition:enter="transition transform ease-out duration-300 delay-[900ms]"
                             x-transition:leave-end="opacity-0 -translate-x-10"
                             x-transition:leave-start="opacity-100 translate-x-0"
                             x-transition:leave="transition transform ease-in duration-300"
@@ -2054,7 +1664,7 @@
                                 x-show="shown"
                                 x-transition:enter-end="opacity-100 translate-y-0"
                                 x-transition:enter-start="opacity-0 -translate-y-10"
-                                x-transition:enter="transition transform ease-out duration-300 delay-[1600ms]"
+                                x-transition:enter="transition transform ease-out duration-300 delay-[1100ms]"
                                 x-transition:leave-end="opacity-0 -translate-y-10"
                                 x-transition:leave-start="opacity-100 translate-y-0"
                                 x-transition:leave="transition transform ease-in duration-300"
@@ -2076,7 +1686,7 @@
                                 x-show="shown"
                                 x-transition:enter-end="opacity-100 translate-y-0"
                                 x-transition:enter-start="opacity-0 -translate-y-10"
-                                x-transition:enter="transition transform ease-out duration-300 delay-[1800ms]"
+                                x-transition:enter="transition transform ease-out duration-300 delay-[1200ms]"
                                 x-transition:leave-end="opacity-0 -translate-y-10"
                                 x-transition:leave-start="opacity-100 translate-y-0"
                                 x-transition:leave="transition transform ease-in duration-300"
@@ -2091,7 +1701,7 @@
                             x-show="shown"
                             x-transition:enter-end="opacity-100 translate-x-0"
                             x-transition:enter-start="opacity-0 translate-x-10"
-                            x-transition:enter="transition transform ease-out duration-300 delay-[1800ms]"
+                            x-transition:enter="transition transform ease-out duration-300 delay-[1200ms]"
                             x-transition:leave-end="opacity-0 translate-x-10"
                             x-transition:leave-start="opacity-100 translate-x-0"
                             x-transition:leave="transition transform ease-in duration-300"
@@ -2102,7 +1712,7 @@
                                 x-show="shown"
                                 x-transition:enter-end="opacity-100 translate-y-0"
                                 x-transition:enter-start="opacity-0 -translate-y-10"
-                                x-transition:enter="transition transform ease-out duration-300 delay-[2400ms]"
+                                x-transition:enter="transition transform ease-out duration-300 delay-[1400ms]"
                                 x-transition:leave-end="opacity-0 -translate-y-10"
                                 x-transition:leave-start="opacity-100 translate-y-0"
                                 x-transition:leave="transition transform ease-in duration-300"
@@ -2124,7 +1734,7 @@
                                 x-show="shown"
                                 x-transition:enter-end="opacity-100 translate-y-0"
                                 x-transition:enter-start="opacity-0 -translate-y-10"
-                                x-transition:enter="transition transform ease-out duration-300 delay-[2700ms]"
+                                x-transition:enter="transition transform ease-out duration-300 delay-[1500ms]"
                                 x-transition:leave-end="opacity-0 -translate-y-10"
                                 x-transition:leave-start="opacity-100 translate-y-0"
                                 x-transition:leave="transition transform ease-in duration-300"
@@ -2139,7 +1749,7 @@
                             x-show="shown"
                             x-transition:enter-end="opacity-100 translate-x-0"
                             x-transition:enter-start="opacity-0 -translate-x-10"
-                            x-transition:enter="transition transform ease-out duration-300 delay-[2400ms]"
+                            x-transition:enter="transition transform ease-out duration-300 delay-[1500ms]"
                             x-transition:leave-end="opacity-0 -translate-x-10"
                             x-transition:leave-start="opacity-100 translate-x-0"
                             x-transition:leave="transition transform ease-in duration-300"
@@ -2150,7 +1760,7 @@
                                 x-show="shown"
                                 x-transition:enter-end="opacity-100 translate-y-0"
                                 x-transition:enter-start="opacity-0 -translate-y-10"
-                                x-transition:enter="transition transform ease-out duration-300 delay-[3200ms]"
+                                x-transition:enter="transition transform ease-out duration-300 delay-[1700ms]"
                                 x-transition:leave-end="opacity-0 -translate-y-10"
                                 x-transition:leave-start="opacity-100 translate-y-0"
                                 x-transition:leave="transition transform ease-in duration-300"
@@ -2172,12 +1782,12 @@
                                 x-show="shown"
                                 x-transition:enter-end="opacity-100 translate-y-0"
                                 x-transition:enter-start="opacity-0 -translate-y-10"
-                                x-transition:enter="transition transform ease-out duration-300 delay-[3600ms]"
+                                x-transition:enter="transition transform ease-out duration-300 delay-[1800ms]"
                                 x-transition:leave-end="opacity-0 -translate-y-10"
                                 x-transition:leave-start="opacity-100 translate-y-0"
                                 x-transition:leave="transition transform ease-in duration-300"
                             >
-                                إقامة الهاكاثون
+                                إقامة إلكتراثون
                             </h3>
                         </div>
                     </div>
@@ -2187,7 +1797,7 @@
                             x-show="shown"
                             x-transition:enter-end="opacity-100 translate-x-0"
                             x-transition:enter-start="opacity-0 translate-x-10"
-                            x-transition:enter="transition transform ease-out duration-300 delay-[3000ms]"
+                            x-transition:enter="transition transform ease-out duration-300 delay-[1800ms]"
                             x-transition:leave-end="opacity-0 translate-x-10"
                             x-transition:leave-start="opacity-100 translate-x-0"
                             x-transition:leave="transition transform ease-in duration-300"
@@ -2198,7 +1808,7 @@
                                 x-show="shown"
                                 x-transition:enter-end="opacity-100 translate-y-0"
                                 x-transition:enter-start="opacity-0 -translate-y-10"
-                                x-transition:enter="transition transform ease-out duration-300 delay-[4000ms]"
+                                x-transition:enter="transition transform ease-out duration-300 delay-[2000ms]"
                                 x-transition:leave-end="opacity-0 -translate-y-10"
                                 x-transition:leave-start="opacity-100 translate-y-0"
                                 x-transition:leave="transition transform ease-in duration-300"
@@ -2220,7 +1830,7 @@
                                 x-show="shown"
                                 x-transition:enter-end="opacity-100 translate-y-0"
                                 x-transition:enter-start="opacity-0 -translate-y-10"
-                                x-transition:enter="transition transform ease-out duration-300 delay-[4500ms]"
+                                x-transition:enter="transition transform ease-out duration-300 delay-[2100ms]"
                                 x-transition:leave-end="opacity-0 -translate-y-10"
                                 x-transition:leave-start="opacity-100 translate-y-0"
                                 x-transition:leave="transition transform ease-in duration-300"
@@ -2267,7 +1877,7 @@
             <div class="xl:gap-9 flex flex-col max-w-screen-xl gap-4 mx-auto">
                 <div
                     class="xl:gap-14 lg:gap-8 md:gap-6 sm:gap-4 flex gap-0"
-                    x-data="countdown(Date.parse('19 Aug 2024 00:00:00 +3'))"
+                    x-data="countdown(Date.parse('20 Aug 2024 00:00:00 +3'))"
                 >
                     <div
                         class="bg-[#F4F4F4] xl:gap-4 sm:rounded-3xl rounded-none flex items-center justify-center lg:gap-3 md:gap-2 gap-1 xl:px-8 lg:px-6 md:px-4 px-2 xl:py-5 lg:py-4 md:py-3 py-2 shadow"
@@ -2383,7 +1993,7 @@
     <div class="bg-opacity-10 absolute top-0 left-0 z-0 w-full h-full">
         <img
             class="object-cover object-center w-full h-full"
-            src="https://seyamms.github.io/sera-v2/assets/images/sera-section.png"
+            src="https://seyamms.github.io/sera-v2/assets/images/sera-section.jpg"
             alt="sera-section"
         />
     </div>
@@ -2645,6 +2255,21 @@
                             </div>
                         </a>
                                     </div>
+
+                <div
+                    class=""
+                    x-show="shown"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:enter-start="opacity-0 -translate-y-10"
+                    x-transition:enter="transition transform ease-out duration-300 delay-[2100ms]"
+                    x-transition:leave-end="opacity-0 -translate-y-10"
+                    x-transition:leave-start="opacity-100 translate-y-0"
+                    x-transition:leave="transition transform ease-in duration-300"
+                >
+                    <p class="lg:text-[26px] md:text-[20px] text-[16px] font-bold text-center text-[#1B1B1B]">
+                        بإشراف فريق ( البحث والابتكار ) بالهيئة السعودية لتنظيم الكهرباء
+                    </p>
+                </div>
             </div>
 
         </div>
@@ -2694,7 +2319,7 @@
                             >
                                 <h3
                                     class="text-[#1B1B1B] lg:text-[26px] md:text-[20px] text-[16px] font-semibold text-start">
-                                    1. ما هو الهاكاثون؟
+                                    1. ما هو الإلكتراثون ؟
                                 </h3>
                                 <div class="flex-shrink-0 p-4">
                                     <img
@@ -2774,7 +2399,7 @@
                             >
                                 <h3
                                     class="text-[#1B1B1B] lg:text-[26px] md:text-[20px] text-[16px] font-semibold text-start">
-                                    3. ما هي أهداف الهاكاثون؟
+                                    3. ما هي أهداف الإلكتراثون ؟
                                 </h3>
                                 <div class="flex-shrink-0 p-4">
                                     <img
@@ -2790,7 +2415,7 @@
                                 x-show="open"
                             >
                                 <p class="md:text-lg text-base font-bold">
-                                    يهدف الهاكاثون إلى العمل على رصد التحديات التي تواجه قطاع الكهرباء في المملكة، وإبراز وإشراك أفراد المجتمع بطرح حلولٍ ذات طابع استثماري للتحديات، وأخيرًا خلق شركات استثمارية متنوعة ومستدامة.
+                                    يهدف الإلكتراثون  إلى العمل على رصد التحديات التي تواجه قطاع الكهرباء في المملكة، وإبراز وإشراك أفراد المجتمع بطرح حلولٍ ذات طابع استثماري للتحديات، وأخيرًا خلق شركات استثمارية متنوعة ومستدامة.
                                 </p>
                             </div>
                         </div>
@@ -2814,7 +2439,7 @@
                             >
                                 <h3
                                     class="text-[#1B1B1B] lg:text-[26px] md:text-[20px] text-[16px] font-semibold text-start">
-                                    4. ما هي اللغة المستخدمة في الهاكاثون؟
+                                    4. ما هي اللغة المستخدمة في الإلكتراثون ؟
                                 </h3>
                                 <div class="flex-shrink-0 p-4">
                                     <img
@@ -2854,7 +2479,7 @@
                             >
                                 <h3
                                     class="text-[#1B1B1B] lg:text-[26px] md:text-[20px] text-[16px] font-semibold text-start">
-                                    5. ما هي خطوات التسجيل في الهاكاثون؟
+                                    5. ما هي خطوات التسجيل في الإلكتراثون ؟
                                 </h3>
                                 <div class="flex-shrink-0 p-4">
                                     <img
@@ -2870,7 +2495,7 @@
                                 x-show="open"
                             >
                                 <p class="md:text-lg text-base font-bold">
-                                    بإمكانك التسجيل في الهاكاثون بعد الاطلاع على المسارات والتحديات الموجودة على المنصة، ثم بعد ذلك اختيار التحدي الذي تود المشاركة فيه، ثم تقديم حلك المبتكر بعد إضافة بيانات التواصل الخاص بك.
+                                    بإمكانك التسجيل في الإلكتراثون  بعد الاطلاع على المسارات والتحديات الموجودة على المنصة، ثم بعد ذلك اختيار التحدي الذي تود المشاركة فيه، ثم تقديم حلك المبتكر بعد إضافة بيانات التواصل الخاص بك.
                                 </p>
                             </div>
                         </div>
@@ -2910,7 +2535,7 @@
                                 x-show="open"
                             >
                                 <p class="md:text-lg text-base font-bold">
-                                    نعم بالطبع، بإمكانك المشاركة بطرح فكرة جديدة ومبتكرة تخدم مجالًا غير موجود في الهاكاثون.
+                                    نعم بالطبع، بإمكانك المشاركة بطرح فكرة جديدة ومبتكرة تخدم مجالًا غير موجود في الإلكتراثون .
                                 </p>
                             </div>
                         </div>
@@ -2990,7 +2615,7 @@
                                 x-show="open"
                             >
                                 <p class="md:text-lg text-base font-bold">
-                                    يمكنك المشاركة في التحدي كفرد، ولكن بعد ترشح فكرتك للهاكاثون لا بد من تكوين فريق من شخصين يحمل معك الفكرة للمشاركة في الهاكاثون.
+                                    يمكنك المشاركة في التحدي كفرد، ولكن بعد ترشح فكرتك للإلكتراثون  لا بد من تكوين فريق من شخصين يحمل معك الفكرة للمشاركة في الإلكتراثون .
                                 </p>
                             </div>
                         </div>
@@ -3030,7 +2655,7 @@
                                 x-show="open"
                             >
                                 <p class="md:text-lg text-base font-bold">
-                                    نعم يمكنك تغيير أعضاء الفريق بعد التسجيل، ولكن عند الترشح لابد لك من اختيار شخصين لتمثيل الفكرة والمشاركة في الهاكاثون.
+                                    نعم يمكنك تغيير أعضاء الفريق بعد التسجيل، ولكن عند الترشح لابد لك من اختيار شخصين لتمثيل الفكرة والمشاركة في الإلكتراثون .
                                 </p>
                             </div>
                         </div>
@@ -3054,7 +2679,7 @@
                             >
                                 <h3
                                     class="text-[#1B1B1B] lg:text-[26px] md:text-[20px] text-[16px] font-semibold text-start">
-                                    10. هل توجد رسوم تسجيل في الهاكاثون؟
+                                    10. هل توجد رسوم تسجيل في الإلكتراثون ؟
                                 </h3>
                                 <div class="flex-shrink-0 p-4">
                                     <img
@@ -3094,7 +2719,7 @@
                             >
                                 <h3
                                     class="text-[#1B1B1B] lg:text-[26px] md:text-[20px] text-[16px] font-semibold text-start">
-                                    11. هل يُشترط للاشتراك في الهاكاثون العمل في جهة في مجال الكهرباء؟
+                                    11. هل يُشترط للاشتراك في الإلكتراثون  العمل في جهة في مجال الكهرباء؟
                                 </h3>
                                 <div class="flex-shrink-0 p-4">
                                     <img
@@ -3245,7 +2870,7 @@
     <div class="bg-opacity-10 absolute top-0 left-0 z-0 w-full h-full">
         <img
             class="object-cover object-center w-full h-full"
-            src="https://seyamms.github.io/sera-v2/assets/images/sera-section.png"
+            src="https://seyamms.github.io/sera-v2/assets/images/sera-section.jpg"
             alt="sera-section"
         />
     </div>

@@ -114,7 +114,7 @@
     <div class="bg-opacity-10 absolute top-0 left-0 z-0 w-full h-full">
         <img
             class="object-cover object-center w-full h-full"
-            src="{{ $page->asset('images/sera-section.png') }}"
+            src="{{ $page->asset('images/sera-section.jpg') }}"
             alt="sera-section"
         />
     </div>

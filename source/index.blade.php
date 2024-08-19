@@ -1,6 +1,7 @@
 @extends('_layouts.main')
 
 @section('body')
+    @include('_partials.index.header')
     @include('_partials.index.main')
     @include('_partials.index.ticker')
     @include('_partials.index.sera')

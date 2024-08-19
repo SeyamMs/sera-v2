@@ -83,10 +83,14 @@
     }"
     x-init="setTimeout(function() {
         loaded = true
-        if (to)
+        if (to) {
             setTimeout(function() {
                 $scroll('#' + to, { behavior: 'smooth', offset: -1 })
-            }, 300)
+                setTimeout(function() {
+                    history.pushState({}, null, window.location.href.split('?')[0]);
+                }, 300)
+            }, 500)
+        }
     }, 300)"
     :class="{ 'overflow-hidden': !loaded }"
 >

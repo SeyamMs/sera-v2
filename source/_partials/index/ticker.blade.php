@@ -36,7 +36,7 @@
 
                     <div
                         class="border-s-[3px] px-1 flex-shrink-0 flex border-[#10D07F] bg-gradient-to-r from-[#10D07F52] to-[#10D07F0A]">
-                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">هاكاثون 2024</h2>
+                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">إلكتراثون 2024</h2>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
 
                     <div
                         class="border-s-[3px] px-1 flex-shrink-0 flex border-[#10D07F] bg-gradient-to-r from-[#10D07F52] to-[#10D07F0A]">
-                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">هاكاثون 2024</h2>
+                        <h2 class="md:text-[54px] sm:text-5xl text-4xl font-medium">إلكتراثون 2024</h2>
                     </div>
                 </div>
             </div>

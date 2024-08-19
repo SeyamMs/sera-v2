@@ -31,12 +31,13 @@
                     >
                         <video
                             class="absolute top-0 left-0 z-0 object-cover w-full h-full"
+                            poster="{{ $page->asset('videos/goals-section.jpg') }}"
                             autoplay
                             muted
                             loop
                         >
                             <source
-                                src="{{ $page->asset('videos/targets-section.mp4') }}"
+                                src="{{ $page->asset('videos/goals-section.mp4') }}"
                                 type="video/mp4"
                             />
                         </video>

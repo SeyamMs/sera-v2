@@ -23,7 +23,7 @@
             <div class="xl:gap-9 flex flex-col max-w-screen-xl gap-4 mx-auto">
                 <div
                     class="xl:gap-14 lg:gap-8 md:gap-6 sm:gap-4 flex gap-0"
-                    x-data="countdown(Date.parse('19 Aug 2024 00:00:00 +3'))"
+                    x-data="countdown(Date.parse('20 Aug 2024 00:00:00 +3'))"
                 >
                     <div
                         class="bg-[#F4F4F4] xl:gap-4 sm:rounded-3xl rounded-none flex items-center justify-center lg:gap-3 md:gap-2 gap-1 xl:px-8 lg:px-6 md:px-4 px-2 xl:py-5 lg:py-4 md:py-3 py-2 shadow"
@@ -139,7 +139,7 @@
     <div class="bg-opacity-10 absolute top-0 left-0 z-0 w-full h-full">
         <img
             class="object-cover object-center w-full h-full"
-            src="{{ $page->asset('images/sera-section.png') }}"
+            src="{{ $page->asset('images/sera-section.jpg') }}"
             alt="sera-section"
         />
     </div>
