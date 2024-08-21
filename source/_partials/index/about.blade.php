@@ -1,5 +1,6 @@
+{{-- min-h-[1140px] xl:min-h-[713px] lg:min-h-[812px] md:min-h-[744px] sm:min-h-[960px] --}}
 <section
-    class="relative flex items-center min-h-[1140px] xl:min-h-[713px] lg:min-h-[812px] md:min-h-[744px] sm:min-h-[960px] overflow-hidden bg-white"
+    class="relative flex items-center min-h-[448px] overflow-hidden bg-white"
     id="about-section"
     x-data="{ shown: false }"
     x-intersect.threshold.20="shown = true"
@@ -36,7 +37,7 @@
                                 إلكتراثون الهيئة السعودية لتنظيم الكهرباء
                                 (SERA)
                                 منافسة وطنية للمبتكرين والمطورين
-                                والمهتمين في قطاع الكهرباء، بهدف إيجاد إلى التكامل لإيجاد حلول إبداعية للتحديات التي
+                                والمهتمين في قطاع الكهرباء، بهدف إيجاد حلول إبداعية للتحديات التي
                                 تواجه هذا
                                 القطاع.
                             </p>
@@ -70,7 +71,7 @@
                 </div>
             </div>
 
-            <div class="md:col-span-3 flex-grow col-span-6">
+            <div class="md:col-span-3 md:block flex-grow hidden col-span-6">
                 <div class="rounded-3xl relative w-full h-full min-h-[500px] max-h-[700px] pt-1 overflow-hidden">
                     <div
                         class="absolute top-0 left-0 z-10 w-[255px] h-[124px]"
@@ -82,11 +83,11 @@
                         x-transition:leave-start="opacity-100 translate-x-0"
                         x-transition:leave="transition transform ease-in duration-300"
                     >
-                        <img
+                        {{-- <img
                             class="object-cover object-left-top w-full h-full"
                             src="{{ $page->asset('images/saudi-flag.png') }}"
                             alt="saudi-flag"
-                        />
+                        /> --}}
                     </div>
                     <div
                         class="rounded-3xl relative w-full h-full overflow-hidden"
@@ -99,11 +100,11 @@
                         x-transition:leave="transition transform ease-in duration-300"
                     >
                         <div class="absolute top-0 left-0 z-0 w-full h-full">
-                            <img
+                            {{-- <img
                                 class="object-cover object-center w-full h-full lg:object-[70%] md:object-[60%]"
                                 src="{{ $page->asset('images/about-section.jpg') }}"
                                 alt="about-section"
-                            />
+                            /> --}}
                         </div>
                     </div>
                 </div>

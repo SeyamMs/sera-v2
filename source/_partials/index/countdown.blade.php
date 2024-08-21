@@ -1,6 +1,5 @@
 <section
     class="relative flex min-h-screen items-center overflow-hidden bg-[#230C44]"
-    id="about-section"
     x-data="{ shown: false }"
     x-intersect.threshold.20="shown = true"
 >
@@ -23,7 +22,7 @@
             <div class="xl:gap-9 flex flex-col max-w-screen-xl gap-4 mx-auto">
                 <div
                     class=""
-                    x-data="countdown(Date.parse('20 Aug 2024 00:00:00 +3'))"
+                    x-data="countdown(Date.parse('4 Sep 2024 23:59:59 +3'))"
                 >
                     <template x-if="remaining < 0">
                         <div class="xl:gap-14 lg:gap-8 md:gap-6 sm:gap-4 flex gap-0">

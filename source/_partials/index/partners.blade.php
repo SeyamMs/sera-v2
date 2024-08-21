@@ -10,9 +10,9 @@
         [
             'title' => 'الشريك الريادي',
             'inverted' => false,
-            'partner' => 'code-logo',
-            'image' => 'images/partners/code-logo.svg',
-            'url' => 'https://code.mcit.gov.sa/ar',
+            'partner' => 'lunment-logo',
+            'image' => 'images/partners/lunment-logo.png',
+            'url' => 'https://lunment.net',
         ],
         // [
         //     'title' => 'الشريك الريادي',
@@ -66,7 +66,7 @@
                     @foreach ($partners1 as $partner)
                         <a
                             class="flex"
-                            href="https://arweqah.sa"
+                            href="{{ $partner['url'] }}"
                             target="_blank"
                             x-show="shown"
                             x-transition:enter-end="opacity-100 translate-y-0"
@@ -85,7 +85,7 @@
                                     <img
                                         class="object-scale-down w-full h-full"
                                         src="{{ $page->asset($partner['image']) }}"
-                                        alt="arweqah-logo"
+                                        alt="{{ $partner['partner'] }}"
                                     />
                                 </div>
                             </div>
@@ -97,7 +97,7 @@
                     @foreach ($partners2 as $partner)
                         <a
                             class="flex"
-                            href="https://arweqah.sa"
+                            href="{{ $partner['url'] }}"
                             target="_blank"
                             x-show="shown"
                             x-transition:enter-end="opacity-100 translate-y-0"
@@ -116,7 +116,7 @@
                                     <img
                                         class="object-scale-down w-full h-full"
                                         src="{{ $page->asset($partner['image']) }}"
-                                        alt="{{ str($partner['image'])->before('.')->afterLast('/') }}"
+                                        alt="{{ $partner['partner'] }}"
                                     />
                                 </div>
                             </div>

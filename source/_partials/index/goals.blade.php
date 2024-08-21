@@ -1,5 +1,5 @@
 <section
-    class="relative flex items-center xl:min-h-[908px] lg:min-h-[1028px] md:min-h-[1104px] sm:min-h-[1076px] min-h-[1160px] overflow-hidden bg-white"
+    class="relative flex items-center xl:min-h-[908px] lg:min-h-[1028px] md:min-h-[1104px] min-h-[1076px] overflow-hidden bg-white"
     id="goals-section"
     x-data="{ shown: false }"
     x-intersect.threshold.20="shown = true"

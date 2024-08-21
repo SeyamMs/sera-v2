@@ -52,8 +52,11 @@
         @include($section['type'], ['data' => $section['data']])
     @endforeach
 
-    {{-- @include('_partials.path.right-text')
-    @include('_partials.path.left-list')
-    @include('_partials.path.right-list')
-    @include('_partials.path.left-text') --}}
+    @include('_partials.paths.2-1.idioms-1')
+    @include('_partials.paths.1-2.emerging-techs')
+    @include('_partials.paths.2-1.idioms-2')
+    @include('_partials.paths.2-1.info-and-stats-1')
+    @include('_partials.paths.2-1.info-and-stats-2')
+    @include('_partials.paths.2-1.key-questions')
+    @include('_partials.paths.2-1.references')
 @endsection

@@ -16,8 +16,16 @@
         @include($section['type'], ['data' => $section['data']])
     @endforeach
 
-    {{-- @include('_partials.path.right-text')
-    @include('_partials.path.left-list')
-    @include('_partials.path.right-list')
-    @include('_partials.path.left-text') --}}
+
+    @include('_partials.paths.3-1.ai')
+    <div class="relative w-full h-12 bg-white"></div>
+    @include('_partials.paths.3-1.bd')
+    <div class="relative w-full h-12 bg-white"></div>
+    @include('_partials.paths.3-1.bc')
+    <div class="relative w-full h-12 bg-white"></div>
+    @include('_partials.paths.3-1.iot')
+    <div class="relative w-full h-12 bg-white"></div>
+    @include('_partials.paths.3-1.5g')
+    <div class="relative w-full h-12 bg-white"></div>
+    @include('_partials.paths.3-1.gt')
 @endsection

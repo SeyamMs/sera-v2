@@ -1,6 +1,7 @@
 @php
     $paths = [
         [
+            'special' => false,
             'title' => 'تعزيز رضا المستهلك',
             'image' => 'images/paths-1.jpg',
             'col_class' => '',
@@ -17,10 +18,11 @@
             ],
         ],
         [
+            'special' => false,
             'title' => 'دمج الطاقة المتجددة',
             'image' => 'images/paths-2.jpg',
-            'col_class' => 'xl:order-none lg:order-last',
-            'wrapper_class' => 'xl:ml-auto lg:ml-0 ml-auto mr-auto',
+            'col_class' => '',
+            'wrapper_class' => 'xl:mr-auto lg:mr-0 ml-auto mr-auto',
             'challenges' => [
                 [
                     'title' => 'حلول ابتكارية للمولدات الاحتياطية وتخزين الطاقة',
@@ -33,13 +35,15 @@
             ],
         ],
         [
+            'special' => true,
             'title' => 'تبني التقنيات الناشئة',
             'image' => 'images/paths-3.jpg',
             'col_class' => '',
-            'wrapper_class' => 'lg:mr-0 ml-auto mr-auto',
+            'wrapper_class' => 'xl:mr-0 xl:ml-auto lg:ml-0 ml-auto mr-auto',
             'challenges' => [
                 [
-                    'title' => 'تبني التقنيات الناشئة',
+                    'title' =>
+                        'هذا المسار للمشاركين الذين لديهم حل ابتكاري يعالج تحدي في قطاع الكهرباء غير التحديات التي تم ذكرها في مسار تعزيز رضا المستهلك أو مسار دمج الطاقة المتجددة، ويتضمن استخدام أحد التقنيات الناشئة',
                     'link' => '/paths/3-1-emerging-technologies',
                 ],
             ],
@@ -48,7 +52,7 @@
 @endphp
 
 <section
-    class="relative flex xl:min-h-[1179px] lg:min-h-[2025px] md:min-h-[2712px] sm:min-h-[2186px] min-h-[2102px] items-center overflow-hidden bg-[#230C44]"
+    class="relative flex xl:min-h-[1179px] lg:min-h-[1849px] md:min-h-[2712px] sm:min-h-[2186px] min-h-[2102px] items-center overflow-hidden bg-[#230C44]"
     id="paths-section"
     x-data="{ shown: false }"
     x-intersect.threshold.20="shown = true"
@@ -74,7 +78,7 @@
                 @foreach ($paths as $index => $path)
                     <div class="xl:col-span-2 lg:col-span-3 col-span-6 {{ $path['col_class'] }}">
                         <div
-                            class="bg-[#FFFFFF26] rounded-3xl max-w-md flex flex-col overflow-hidden md:pt-8 pt-4 {{ $path['wrapper_class'] }}"
+                            class="bg-[#FFFFFF26] rounded-3xl max-w-md flex flex-col h-full overflow-hidden md:pt-8 pt-4 {{ $path['wrapper_class'] }}"
                             x-show="shown"
                             x-transition:enter-end="opacity-100 translate-y-0"
                             x-transition:enter-start="opacity-0 -translate-y-10"
@@ -114,33 +118,24 @@
                                 </div>
                             </div>
                             <div class="md:gap-8 md:px-8 md:pt-8 md:pb-10 flex flex-col gap-4 px-4 pt-2 mb-6">
-                                <h4
-                                    class="text-2xl text-[#FFFFFF99] font-semibold"
-                                    x-show="shown"
-                                    x-transition:enter-end="opacity-100 translate-x-0"
-                                    x-transition:enter-start="opacity-0 translate-x-10"
-                                    x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 300 + 1000 }}ms]"
-                                    x-transition:leave-end="opacity-0 translate-x-10"
-                                    x-transition:leave-start="opacity-100 translate-x-0"
-                                    x-transition:leave="transition transform ease-in duration-300"
-                                >
-                                    إختر التحدي وشاهد التفاصيل
-                                </h4>
 
-                                @foreach ($path['challenges'] as $index => $challenge)
-                                    <a
-                                        class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="{{ $page->baseUrl }}{{ $challenge['link'] }}"
+
+                                @if ($path['special'])
+                                    <h4
+                                        class="text-2xl text-[#FFFFFF99] font-semibold"
                                         x-show="shown"
                                         x-transition:enter-end="opacity-100 translate-x-0"
                                         x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->parent->iteration * 300 + 1000 + $loop->iteration * 100 }}ms]"
+                                        x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 300 + 1000 }}ms]"
                                         x-transition:leave-end="opacity-0 translate-x-10"
                                         x-transition:leave-start="opacity-100 translate-x-0"
                                         x-transition:leave="transition transform ease-in duration-300"
                                     >
+                                        لديك حل ابتكاري؟
+                                    </h4>
+                                    @foreach ($path['challenges'] as $index => $challenge)
                                         <div
-                                            class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
+                                            class="px-4 py-6 bg-white rounded-lg"
                                             x-show="shown"
                                             x-transition:enter-end="opacity-100 translate-x-0"
                                             x-transition:enter-start="opacity-0 translate-x-10"
@@ -149,33 +144,84 @@
                                             x-transition:leave-start="opacity-100 translate-x-0"
                                             x-transition:leave="transition transform ease-in duration-300"
                                         >
-                                            <span
-                                                class="text-white text-[26px] font-bold"
+                                            <p
+                                                class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] font-semibold text-center text-[#230C44]"
                                                 x-show="shown"
                                                 x-transition:enter-end="opacity-100 translate-x-0"
                                                 x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->parent->iteration * 300 + 1000 + $loop->iteration * 300 }}ms]"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->parent->iteration * 300 + 1000 + $loop->iteration * 400 }}ms]"
                                                 x-transition:leave-end="opacity-0 translate-x-10"
                                                 x-transition:leave-start="opacity-100 translate-x-0"
                                                 x-transition:leave="transition transform ease-in duration-300"
                                             >
-                                                {{ str($loop->iteration)->padLeft(2, 0) }}
-                                            </span>
+                                                {{ $challenge['title'] }}
+                                            </p>
                                         </div>
-                                        <span
-                                            class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] max-w-64"
+                                    @endforeach
+                                @else
+                                    <h4
+                                        class="text-2xl text-[#FFFFFF99] font-semibold"
+                                        x-show="shown"
+                                        x-transition:enter-end="opacity-100 translate-x-0"
+                                        x-transition:enter-start="opacity-0 translate-x-10"
+                                        x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->iteration * 300 + 1000 }}ms]"
+                                        x-transition:leave-end="opacity-0 translate-x-10"
+                                        x-transition:leave-start="opacity-100 translate-x-0"
+                                        x-transition:leave="transition transform ease-in duration-300"
+                                    >
+                                        إختر التحدي وشاهد التفاصيل
+                                    </h4>
+                                    @foreach ($path['challenges'] as $index => $challenge)
+                                        <a
+                                            class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
+                                            href="{{ $page->baseUrl }}{{ $challenge['link'] }}"
                                             x-show="shown"
                                             x-transition:enter-end="opacity-100 translate-x-0"
                                             x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->parent->iteration * 300 + 1000 + $loop->iteration * 400 }}ms]"
+                                            x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->parent->iteration * 300 + 1000 + $loop->iteration * 100 }}ms]"
                                             x-transition:leave-end="opacity-0 translate-x-10"
                                             x-transition:leave-start="opacity-100 translate-x-0"
                                             x-transition:leave="transition transform ease-in duration-300"
                                         >
-                                            {{ $challenge['title'] }}
-                                        </span>
-                                    </a>
-                                @endforeach
+                                            <div
+                                                class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
+                                                x-show="shown"
+                                                x-transition:enter-end="opacity-100 translate-x-0"
+                                                x-transition:enter-start="opacity-0 translate-x-10"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->parent->iteration * 300 + 1000 + $loop->iteration * 200 }}ms]"
+                                                x-transition:leave-end="opacity-0 translate-x-10"
+                                                x-transition:leave-start="opacity-100 translate-x-0"
+                                                x-transition:leave="transition transform ease-in duration-300"
+                                            >
+                                                <span
+                                                    class="text-white text-[26px] font-bold"
+                                                    x-show="shown"
+                                                    x-transition:enter-end="opacity-100 translate-x-0"
+                                                    x-transition:enter-start="opacity-0 translate-x-10"
+                                                    x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->parent->iteration * 300 + 1000 + $loop->iteration * 300 }}ms]"
+                                                    x-transition:leave-end="opacity-0 translate-x-10"
+                                                    x-transition:leave-start="opacity-100 translate-x-0"
+                                                    x-transition:leave="transition transform ease-in duration-300"
+                                                >
+                                                    {{ str($loop->iteration)->padLeft(2, 0) }}
+                                                </span>
+                                            </div>
+                                            <span
+                                                class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] max-w-64"
+                                                x-show="shown"
+                                                x-transition:enter-end="opacity-100 translate-x-0"
+                                                x-transition:enter-start="opacity-0 translate-x-10"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[{{ $loop->parent->iteration * 300 + 1000 + $loop->iteration * 400 }}ms]"
+                                                x-transition:leave-end="opacity-0 translate-x-10"
+                                                x-transition:leave-start="opacity-100 translate-x-0"
+                                                x-transition:leave="transition transform ease-in duration-300"
+                                            >
+                                                {{ $challenge['title'] }}
+                                            </span>
+                                        </a>
+                                    @endforeach
+                                @endif
+
 
 
                             </div>

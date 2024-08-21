@@ -32,7 +32,7 @@
                 'list' => [
                     'تشجيع المستهلكين على استخدام الحلول الجديدة وتبني ممارسات موفرة للطاقة.',
                     'تقديم أدوات مبتكرة تساعد المستهلك على الاستفادة من الطاقة بجودة وكفاءة وأقل تكلفة.',
-                    'إنشاء منصات رقمية فعّالة وسهلة الاستخدام تسهل علىالمستهلك الاستفادة من الطاقة بطريقة مميزة مثل (إدارة الاستهلاك، تسهيل عملية الدفع وغيرها).',
+                    'إنشاء منصات رقمية فعّالة وسهلة الاستخدام تسهل على المستهلك الاستفادة من الطاقة بطريقة مميزة مثل (إدارة الاستهلاك، تسهيل عملية الدفع وغيرها).',
                     'تعزيز الوعي حول الطاقة وابتكار طرق سهلة للوصول إلى الجهات ذات الاختصاص أو الخبراء.',
                 ],
             ],
@@ -52,8 +52,14 @@
         @include($section['type'], ['data' => $section['data']])
     @endforeach
 
-    {{-- @include('_partials.path.right-text')
-    @include('_partials.path.left-list')
-    @include('_partials.path.right-list')
-    @include('_partials.path.left-text') --}}
+    @include('_partials.paths.1-1.idioms-1')
+    @include('_partials.paths.1-1.idioms-2')
+    @include('_partials.paths.1-1.emerging-techs')
+    @include('_partials.paths.1-1.info-and-stats')
+    @include('_partials.paths.1-1.smart-electric-services')
+    @include('_partials.paths.1-1.smart-grid-techs')
+    @include('_partials.paths.1-1.idioms-3')
+    @include('_partials.paths.1-1.energy-management-program')
+    @include('_partials.paths.1-1.key-questions')
+    @include('_partials.paths.1-1.references')
 @endsection

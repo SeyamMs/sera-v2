@@ -8,7 +8,7 @@
         <div class="flex flex-col gap-8">
             <div class="flex flex-col gap-2">
                 <h2
-                    class="lg:text-[48px] md:text-[32px] sm:text-[28px] text-[18px] max-w-screen-md mx-auto text-center font-medium text-[#1A1A1A]"
+                    class="lg:text-[48px] md:text-[32px] sm:text-[28px] text-[20px] max-w-screen-md mx-auto text-center font-medium text-[#1A1A1A]"
                     x-show="shown"
                     x-transition:enter-end="opacity-100 translate-y-0"
                     x-transition:enter-start="opacity-0 -translate-y-10"
@@ -25,7 +25,7 @@
                 </h2>
 
                 <h2
-                    class="lg:text-[48px] md:text-[32px] sm:text-[28px] text-[18px] max-w-screen-md mx-auto text-center font-medium text-[#1A1A1A]"
+                    class="lg:text-[32px] md:text-[24px] sm:text-[18px] text-[14px] max-w-screen-md mx-auto text-center font-medium text-[#1A1A1A]"
                     x-show="shown"
                     x-transition:enter-end="opacity-100 translate-y-0"
                     x-transition:enter-start="opacity-0 -translate-y-10"
@@ -34,7 +34,7 @@
                     x-transition:leave-start="opacity-100 translate-y-0"
                     x-transition:leave="transition transform ease-in duration-300"
                 >
-                    + خدمات التوجيه والإرشاد مابعد الكتراثون
+                    بالإضافة إلى خدمات التوجيه والإرشاد مابعد الكتراثون
                 </h2>
             </div>
 

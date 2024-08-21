@@ -1,6 +1,5 @@
 <section
     class="relative flex min-h-[516px] items-center overflow-hidden bg-white"
-    id="about-section"
     x-data="{ shown: false }"
     x-intersect.threshold.20="shown = true"
 >
