@@ -46,7 +46,7 @@
 
     <!-- style -->
     <link
-        href="https://electrathon-sera.com/assets/build/css/main.css?id=ad9deea95224cc6a06c1d68eb2796c88"
+        href="https://electrathon-sera.com/assets/build/css/main.css?id=328f0dd73377025ef0c36bd063548a1c"
         rel="stylesheet"
     />
 
@@ -478,7 +478,7 @@
     </div>
 </section>
     <section
-    class="relative flex items-center min-h-[1140px] xl:min-h-[713px] lg:min-h-[812px] md:min-h-[744px] sm:min-h-[960px] overflow-hidden bg-white"
+    class="relative flex items-center min-h-[448px] overflow-hidden bg-white"
     id="about-section"
     x-data="{ shown: false }"
     x-intersect.threshold.20="shown = true"
@@ -515,7 +515,7 @@
                                 إلكتراثون الهيئة السعودية لتنظيم الكهرباء
                                 (SERA)
                                 منافسة وطنية للمبتكرين والمطورين
-                                والمهتمين في قطاع الكهرباء، بهدف إيجاد إلى التكامل لإيجاد حلول إبداعية للتحديات التي
+                                والمهتمين في قطاع الكهرباء، بهدف إيجاد حلول إبداعية للتحديات التي
                                 تواجه هذا
                                 القطاع.
                             </p>
@@ -549,7 +549,7 @@
                 </div>
             </div>
 
-            <div class="md:col-span-3 flex-grow col-span-6">
+            <div class="md:col-span-3 md:block flex-grow hidden col-span-6">
                 <div class="rounded-3xl relative w-full h-full min-h-[500px] max-h-[700px] pt-1 overflow-hidden">
                     <div
                         class="absolute top-0 left-0 z-10 w-[255px] h-[124px]"
@@ -561,11 +561,7 @@
                         x-transition:leave-start="opacity-100 translate-x-0"
                         x-transition:leave="transition transform ease-in duration-300"
                     >
-                        <img
-                            class="object-cover object-left-top w-full h-full"
-                            src="https://electrathon-sera.com/assets/images/saudi-flag.png"
-                            alt="saudi-flag"
-                        />
+                        
                     </div>
                     <div
                         class="rounded-3xl relative w-full h-full overflow-hidden"
@@ -578,11 +574,7 @@
                         x-transition:leave="transition transform ease-in duration-300"
                     >
                         <div class="absolute top-0 left-0 z-0 w-full h-full">
-                            <img
-                                class="object-cover object-center w-full h-full lg:object-[70%] md:object-[60%]"
-                                src="https://electrathon-sera.com/assets/images/about-section.jpg"
-                                alt="about-section"
-                            />
+                            
                         </div>
                     </div>
                 </div>
@@ -592,7 +584,7 @@
     </div>
 </section>
     <section
-    class="relative flex items-center xl:min-h-[908px] lg:min-h-[1028px] md:min-h-[1104px] sm:min-h-[1076px] min-h-[1160px] overflow-hidden bg-white"
+    class="relative flex items-center xl:min-h-[908px] lg:min-h-[1028px] md:min-h-[1104px] min-h-[1076px] overflow-hidden bg-white"
     id="goals-section"
     x-data="{ shown: false }"
     x-intersect.threshold.20="shown = true"
@@ -802,7 +794,7 @@
     </div>
 </section>
     <section
-    class="relative flex xl:min-h-[1179px] lg:min-h-[2025px] md:min-h-[2712px] sm:min-h-[2186px] min-h-[2102px] items-center overflow-hidden bg-[#230C44]"
+    class="relative flex xl:min-h-[1179px] lg:min-h-[1849px] md:min-h-[2712px] sm:min-h-[2186px] min-h-[2102px] items-center overflow-hidden bg-[#230C44]"
     id="paths-section"
     x-data="{ shown: false }"
     x-intersect.threshold.20="shown = true"
@@ -827,7 +819,7 @@
 
                                     <div class="xl:col-span-2 lg:col-span-3 col-span-6 ">
                         <div
-                            class="bg-[#FFFFFF26] rounded-3xl max-w-md flex flex-col overflow-hidden md:pt-8 pt-4 lg:ml-0 ml-auto mr-auto"
+                            class="bg-[#FFFFFF26] rounded-3xl max-w-md flex flex-col h-full overflow-hidden md:pt-8 pt-4 lg:ml-0 ml-auto mr-auto"
                             x-show="shown"
                             x-transition:enter-end="opacity-100 translate-y-0"
                             x-transition:enter-start="opacity-0 -translate-y-10"
@@ -867,32 +859,70 @@
                                 </div>
                             </div>
                             <div class="md:gap-8 md:px-8 md:pt-8 md:pb-10 flex flex-col gap-4 px-4 pt-2 mb-6">
-                                <h4
-                                    class="text-2xl text-[#FFFFFF99] font-semibold"
-                                    x-show="shown"
-                                    x-transition:enter-end="opacity-100 translate-x-0"
-                                    x-transition:enter-start="opacity-0 translate-x-10"
-                                    x-transition:enter="transition transform ease-out duration-300 delay-[1300ms]"
-                                    x-transition:leave-end="opacity-0 translate-x-10"
-                                    x-transition:leave-start="opacity-100 translate-x-0"
-                                    x-transition:leave="transition transform ease-in duration-300"
-                                >
-                                    إختر التحدي وشاهد التفاصيل
-                                </h4>
 
-                                                                    <a
-                                        class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="https://electrathon-sera.com/paths/1-1-improving-consumer-experience"
+
+                                                                    <h4
+                                        class="text-2xl text-[#FFFFFF99] font-semibold"
                                         x-show="shown"
                                         x-transition:enter-end="opacity-100 translate-x-0"
                                         x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[1400ms]"
+                                        x-transition:enter="transition transform ease-out duration-300 delay-[1300ms]"
                                         x-transition:leave-end="opacity-0 translate-x-10"
                                         x-transition:leave-start="opacity-100 translate-x-0"
                                         x-transition:leave="transition transform ease-in duration-300"
                                     >
-                                        <div
-                                            class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
+                                        إختر التحدي وشاهد التفاصيل
+                                    </h4>
+                                                                            <a
+                                            class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
+                                            href="https://electrathon-sera.com/paths/1-1-improving-consumer-experience"
+                                            x-show="shown"
+                                            x-transition:enter-end="opacity-100 translate-x-0"
+                                            x-transition:enter-start="opacity-0 translate-x-10"
+                                            x-transition:enter="transition transform ease-out duration-300 delay-[1400ms]"
+                                            x-transition:leave-end="opacity-0 translate-x-10"
+                                            x-transition:leave-start="opacity-100 translate-x-0"
+                                            x-transition:leave="transition transform ease-in duration-300"
+                                        >
+                                            <div
+                                                class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
+                                                x-show="shown"
+                                                x-transition:enter-end="opacity-100 translate-x-0"
+                                                x-transition:enter-start="opacity-0 translate-x-10"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[1500ms]"
+                                                x-transition:leave-end="opacity-0 translate-x-10"
+                                                x-transition:leave-start="opacity-100 translate-x-0"
+                                                x-transition:leave="transition transform ease-in duration-300"
+                                            >
+                                                <span
+                                                    class="text-white text-[26px] font-bold"
+                                                    x-show="shown"
+                                                    x-transition:enter-end="opacity-100 translate-x-0"
+                                                    x-transition:enter-start="opacity-0 translate-x-10"
+                                                    x-transition:enter="transition transform ease-out duration-300 delay-[1600ms]"
+                                                    x-transition:leave-end="opacity-0 translate-x-10"
+                                                    x-transition:leave-start="opacity-100 translate-x-0"
+                                                    x-transition:leave="transition transform ease-in duration-300"
+                                                >
+                                                    01
+                                                </span>
+                                            </div>
+                                            <span
+                                                class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] max-w-64"
+                                                x-show="shown"
+                                                x-transition:enter-end="opacity-100 translate-x-0"
+                                                x-transition:enter-start="opacity-0 translate-x-10"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[1700ms]"
+                                                x-transition:leave-end="opacity-0 translate-x-10"
+                                                x-transition:leave-start="opacity-100 translate-x-0"
+                                                x-transition:leave="transition transform ease-in duration-300"
+                                            >
+                                                تحسين تجربة المستهلك
+                                            </span>
+                                        </a>
+                                                                            <a
+                                            class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
+                                            href="https://electrathon-sera.com/paths/1-2-enhancing-consumer-safety-and-security"
                                             x-show="shown"
                                             x-transition:enter-end="opacity-100 translate-x-0"
                                             x-transition:enter-start="opacity-0 translate-x-10"
@@ -901,87 +931,51 @@
                                             x-transition:leave-start="opacity-100 translate-x-0"
                                             x-transition:leave="transition transform ease-in duration-300"
                                         >
-                                            <span
-                                                class="text-white text-[26px] font-bold"
+                                            <div
+                                                class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
                                                 x-show="shown"
                                                 x-transition:enter-end="opacity-100 translate-x-0"
                                                 x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[1600ms]"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[1700ms]"
                                                 x-transition:leave-end="opacity-0 translate-x-10"
                                                 x-transition:leave-start="opacity-100 translate-x-0"
                                                 x-transition:leave="transition transform ease-in duration-300"
                                             >
-                                                01
-                                            </span>
-                                        </div>
-                                        <span
-                                            class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] max-w-64"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[1700ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            تحسين تجربة المستهلك
-                                        </span>
-                                    </a>
-                                                                    <a
-                                        class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="https://electrathon-sera.com/paths/1-2-enhancing-consumer-safety-and-security"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[1500ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        <div
-                                            class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[1700ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
+                                                <span
+                                                    class="text-white text-[26px] font-bold"
+                                                    x-show="shown"
+                                                    x-transition:enter-end="opacity-100 translate-x-0"
+                                                    x-transition:enter-start="opacity-0 translate-x-10"
+                                                    x-transition:enter="transition transform ease-out duration-300 delay-[1900ms]"
+                                                    x-transition:leave-end="opacity-0 translate-x-10"
+                                                    x-transition:leave-start="opacity-100 translate-x-0"
+                                                    x-transition:leave="transition transform ease-in duration-300"
+                                                >
+                                                    02
+                                                </span>
+                                            </div>
                                             <span
-                                                class="text-white text-[26px] font-bold"
+                                                class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] max-w-64"
                                                 x-show="shown"
                                                 x-transition:enter-end="opacity-100 translate-x-0"
                                                 x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[1900ms]"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[2100ms]"
                                                 x-transition:leave-end="opacity-0 translate-x-10"
                                                 x-transition:leave-start="opacity-100 translate-x-0"
                                                 x-transition:leave="transition transform ease-in duration-300"
                                             >
-                                                02
+                                                تعزيز أمن وسلامة المستهلكين لخدمات الكهرباء
                                             </span>
-                                        </div>
-                                        <span
-                                            class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] max-w-64"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[2100ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            تعزيز أمن وسلامة المستهلكين لخدمات الكهرباء
-                                        </span>
-                                    </a>
-                                
+                                        </a>
+                                                                    
+
 
                             </div>
                         </div>
                     </div>
-                                    <div class="xl:col-span-2 lg:col-span-3 col-span-6 xl:order-none lg:order-last">
+                                    <div class="xl:col-span-2 lg:col-span-3 col-span-6 ">
                         <div
-                            class="bg-[#FFFFFF26] rounded-3xl max-w-md flex flex-col overflow-hidden md:pt-8 pt-4 xl:ml-auto lg:ml-0 ml-auto mr-auto"
+                            class="bg-[#FFFFFF26] rounded-3xl max-w-md flex flex-col h-full overflow-hidden md:pt-8 pt-4 xl:mr-auto lg:mr-0 ml-auto mr-auto"
                             x-show="shown"
                             x-transition:enter-end="opacity-100 translate-y-0"
                             x-transition:enter-start="opacity-0 -translate-y-10"
@@ -1021,32 +1015,70 @@
                                 </div>
                             </div>
                             <div class="md:gap-8 md:px-8 md:pt-8 md:pb-10 flex flex-col gap-4 px-4 pt-2 mb-6">
-                                <h4
-                                    class="text-2xl text-[#FFFFFF99] font-semibold"
-                                    x-show="shown"
-                                    x-transition:enter-end="opacity-100 translate-x-0"
-                                    x-transition:enter-start="opacity-0 translate-x-10"
-                                    x-transition:enter="transition transform ease-out duration-300 delay-[1600ms]"
-                                    x-transition:leave-end="opacity-0 translate-x-10"
-                                    x-transition:leave-start="opacity-100 translate-x-0"
-                                    x-transition:leave="transition transform ease-in duration-300"
-                                >
-                                    إختر التحدي وشاهد التفاصيل
-                                </h4>
 
-                                                                    <a
-                                        class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="https://electrathon-sera.com/paths/2-1-innovative-solutions-for-backup-generators-and-energy-storage"
+
+                                                                    <h4
+                                        class="text-2xl text-[#FFFFFF99] font-semibold"
                                         x-show="shown"
                                         x-transition:enter-end="opacity-100 translate-x-0"
                                         x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[1700ms]"
+                                        x-transition:enter="transition transform ease-out duration-300 delay-[1600ms]"
                                         x-transition:leave-end="opacity-0 translate-x-10"
                                         x-transition:leave-start="opacity-100 translate-x-0"
                                         x-transition:leave="transition transform ease-in duration-300"
                                     >
-                                        <div
-                                            class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
+                                        إختر التحدي وشاهد التفاصيل
+                                    </h4>
+                                                                            <a
+                                            class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
+                                            href="https://electrathon-sera.com/paths/2-1-innovative-solutions-for-backup-generators-and-energy-storage"
+                                            x-show="shown"
+                                            x-transition:enter-end="opacity-100 translate-x-0"
+                                            x-transition:enter-start="opacity-0 translate-x-10"
+                                            x-transition:enter="transition transform ease-out duration-300 delay-[1700ms]"
+                                            x-transition:leave-end="opacity-0 translate-x-10"
+                                            x-transition:leave-start="opacity-100 translate-x-0"
+                                            x-transition:leave="transition transform ease-in duration-300"
+                                        >
+                                            <div
+                                                class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
+                                                x-show="shown"
+                                                x-transition:enter-end="opacity-100 translate-x-0"
+                                                x-transition:enter-start="opacity-0 translate-x-10"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[1800ms]"
+                                                x-transition:leave-end="opacity-0 translate-x-10"
+                                                x-transition:leave-start="opacity-100 translate-x-0"
+                                                x-transition:leave="transition transform ease-in duration-300"
+                                            >
+                                                <span
+                                                    class="text-white text-[26px] font-bold"
+                                                    x-show="shown"
+                                                    x-transition:enter-end="opacity-100 translate-x-0"
+                                                    x-transition:enter-start="opacity-0 translate-x-10"
+                                                    x-transition:enter="transition transform ease-out duration-300 delay-[1900ms]"
+                                                    x-transition:leave-end="opacity-0 translate-x-10"
+                                                    x-transition:leave-start="opacity-100 translate-x-0"
+                                                    x-transition:leave="transition transform ease-in duration-300"
+                                                >
+                                                    01
+                                                </span>
+                                            </div>
+                                            <span
+                                                class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] max-w-64"
+                                                x-show="shown"
+                                                x-transition:enter-end="opacity-100 translate-x-0"
+                                                x-transition:enter-start="opacity-0 translate-x-10"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[2000ms]"
+                                                x-transition:leave-end="opacity-0 translate-x-10"
+                                                x-transition:leave-start="opacity-100 translate-x-0"
+                                                x-transition:leave="transition transform ease-in duration-300"
+                                            >
+                                                حلول ابتكارية للمولدات الاحتياطية وتخزين الطاقة
+                                            </span>
+                                        </a>
+                                                                            <a
+                                            class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
+                                            href="https://electrathon-sera.com/paths/2-2-efficient-integration-of-renewable-and-non-renewable-energy-sources"
                                             x-show="shown"
                                             x-transition:enter-end="opacity-100 translate-x-0"
                                             x-transition:enter-start="opacity-0 translate-x-10"
@@ -1055,87 +1087,51 @@
                                             x-transition:leave-start="opacity-100 translate-x-0"
                                             x-transition:leave="transition transform ease-in duration-300"
                                         >
-                                            <span
-                                                class="text-white text-[26px] font-bold"
+                                            <div
+                                                class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
                                                 x-show="shown"
                                                 x-transition:enter-end="opacity-100 translate-x-0"
                                                 x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[1900ms]"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[2000ms]"
                                                 x-transition:leave-end="opacity-0 translate-x-10"
                                                 x-transition:leave-start="opacity-100 translate-x-0"
                                                 x-transition:leave="transition transform ease-in duration-300"
                                             >
-                                                01
-                                            </span>
-                                        </div>
-                                        <span
-                                            class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] max-w-64"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[2000ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            حلول ابتكارية للمولدات الاحتياطية وتخزين الطاقة
-                                        </span>
-                                    </a>
-                                                                    <a
-                                        class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="https://electrathon-sera.com/paths/2-2-efficient-integration-of-renewable-and-non-renewable-energy-sources"
-                                        x-show="shown"
-                                        x-transition:enter-end="opacity-100 translate-x-0"
-                                        x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[1800ms]"
-                                        x-transition:leave-end="opacity-0 translate-x-10"
-                                        x-transition:leave-start="opacity-100 translate-x-0"
-                                        x-transition:leave="transition transform ease-in duration-300"
-                                    >
-                                        <div
-                                            class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[2000ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
+                                                <span
+                                                    class="text-white text-[26px] font-bold"
+                                                    x-show="shown"
+                                                    x-transition:enter-end="opacity-100 translate-x-0"
+                                                    x-transition:enter-start="opacity-0 translate-x-10"
+                                                    x-transition:enter="transition transform ease-out duration-300 delay-[2200ms]"
+                                                    x-transition:leave-end="opacity-0 translate-x-10"
+                                                    x-transition:leave-start="opacity-100 translate-x-0"
+                                                    x-transition:leave="transition transform ease-in duration-300"
+                                                >
+                                                    02
+                                                </span>
+                                            </div>
                                             <span
-                                                class="text-white text-[26px] font-bold"
+                                                class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] max-w-64"
                                                 x-show="shown"
                                                 x-transition:enter-end="opacity-100 translate-x-0"
                                                 x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[2200ms]"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[2400ms]"
                                                 x-transition:leave-end="opacity-0 translate-x-10"
                                                 x-transition:leave-start="opacity-100 translate-x-0"
                                                 x-transition:leave="transition transform ease-in duration-300"
                                             >
-                                                02
+                                                دمج مصادر الطاقة المتجددة والطاقة التقليدية
                                             </span>
-                                        </div>
-                                        <span
-                                            class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] max-w-64"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[2400ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            دمج مصادر الطاقة المتجددة والطاقة التقليدية
-                                        </span>
-                                    </a>
-                                
+                                        </a>
+                                                                    
+
 
                             </div>
                         </div>
                     </div>
                                     <div class="xl:col-span-2 lg:col-span-3 col-span-6 ">
                         <div
-                            class="bg-[#FFFFFF26] rounded-3xl max-w-md flex flex-col overflow-hidden md:pt-8 pt-4 lg:mr-0 ml-auto mr-auto"
+                            class="bg-[#FFFFFF26] rounded-3xl max-w-md flex flex-col h-full overflow-hidden md:pt-8 pt-4 xl:mr-0 xl:ml-auto lg:ml-0 ml-auto mr-auto"
                             x-show="shown"
                             x-transition:enter-end="opacity-100 translate-y-0"
                             x-transition:enter-start="opacity-0 -translate-y-10"
@@ -1175,32 +1171,22 @@
                                 </div>
                             </div>
                             <div class="md:gap-8 md:px-8 md:pt-8 md:pb-10 flex flex-col gap-4 px-4 pt-2 mb-6">
-                                <h4
-                                    class="text-2xl text-[#FFFFFF99] font-semibold"
-                                    x-show="shown"
-                                    x-transition:enter-end="opacity-100 translate-x-0"
-                                    x-transition:enter-start="opacity-0 translate-x-10"
-                                    x-transition:enter="transition transform ease-out duration-300 delay-[1900ms]"
-                                    x-transition:leave-end="opacity-0 translate-x-10"
-                                    x-transition:leave-start="opacity-100 translate-x-0"
-                                    x-transition:leave="transition transform ease-in duration-300"
-                                >
-                                    إختر التحدي وشاهد التفاصيل
-                                </h4>
 
-                                                                    <a
-                                        class="group gap-4 bg-white hover:ring-8 hover:ring-opacity-60 hover:ring-white font-semibold rounded-full flex items-center justify-start p-2 h-20 text-[#230C44]"
-                                        href="https://electrathon-sera.com/paths/3-1-emerging-technologies"
+
+                                                                    <h4
+                                        class="text-2xl text-[#FFFFFF99] font-semibold"
                                         x-show="shown"
                                         x-transition:enter-end="opacity-100 translate-x-0"
                                         x-transition:enter-start="opacity-0 translate-x-10"
-                                        x-transition:enter="transition transform ease-out duration-300 delay-[2000ms]"
+                                        x-transition:enter="transition transform ease-out duration-300 delay-[1900ms]"
                                         x-transition:leave-end="opacity-0 translate-x-10"
                                         x-transition:leave-start="opacity-100 translate-x-0"
                                         x-transition:leave="transition transform ease-in duration-300"
                                     >
-                                        <div
-                                            class="flex items-center justify-center size-[70px] flex-shrink-0 rounded-full bg-[#230C44]"
+                                        لديك حل ابتكاري؟
+                                    </h4>
+                                                                            <div
+                                            class="px-4 py-6 bg-white rounded-lg"
                                             x-show="shown"
                                             x-transition:enter-end="opacity-100 translate-x-0"
                                             x-transition:enter-start="opacity-0 translate-x-10"
@@ -1209,33 +1195,21 @@
                                             x-transition:leave-start="opacity-100 translate-x-0"
                                             x-transition:leave="transition transform ease-in duration-300"
                                         >
-                                            <span
-                                                class="text-white text-[26px] font-bold"
+                                            <p
+                                                class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] font-semibold text-center text-[#230C44]"
                                                 x-show="shown"
                                                 x-transition:enter-end="opacity-100 translate-x-0"
                                                 x-transition:enter-start="opacity-0 translate-x-10"
-                                                x-transition:enter="transition transform ease-out duration-300 delay-[2200ms]"
+                                                x-transition:enter="transition transform ease-out duration-300 delay-[2300ms]"
                                                 x-transition:leave-end="opacity-0 translate-x-10"
                                                 x-transition:leave-start="opacity-100 translate-x-0"
                                                 x-transition:leave="transition transform ease-in duration-300"
                                             >
-                                                01
-                                            </span>
+                                                هذا المسار للمشاركين الذين لديهم حل ابتكاري يعالج تحدي في قطاع الكهرباء غير التحديات التي تم ذكرها في مسار تعزيز رضا المستهلك أو مسار دمج الطاقة المتجددة، ويتضمن استخدام أحد التقنيات الناشئة
+                                            </p>
                                         </div>
-                                        <span
-                                            class="xl:text-[18px] 2xl:text-[20px] lg:text-[16px] max-w-64"
-                                            x-show="shown"
-                                            x-transition:enter-end="opacity-100 translate-x-0"
-                                            x-transition:enter-start="opacity-0 translate-x-10"
-                                            x-transition:enter="transition transform ease-out duration-300 delay-[2300ms]"
-                                            x-transition:leave-end="opacity-0 translate-x-10"
-                                            x-transition:leave-start="opacity-100 translate-x-0"
-                                            x-transition:leave="transition transform ease-in duration-300"
-                                        >
-                                            تبني التقنيات الناشئة
-                                        </span>
-                                    </a>
-                                
+                                                                    
+
 
                             </div>
                         </div>
@@ -1400,7 +1374,7 @@
         <div class="flex flex-col gap-8">
             <div class="flex flex-col gap-2">
                 <h2
-                    class="lg:text-[48px] md:text-[32px] sm:text-[28px] text-[18px] max-w-screen-md mx-auto text-center font-medium text-[#1A1A1A]"
+                    class="lg:text-[48px] md:text-[32px] sm:text-[28px] text-[20px] max-w-screen-md mx-auto text-center font-medium text-[#1A1A1A]"
                     x-show="shown"
                     x-transition:enter-end="opacity-100 translate-y-0"
                     x-transition:enter-start="opacity-0 -translate-y-10"
@@ -1417,7 +1391,7 @@
                 </h2>
 
                 <h2
-                    class="lg:text-[48px] md:text-[32px] sm:text-[28px] text-[18px] max-w-screen-md mx-auto text-center font-medium text-[#1A1A1A]"
+                    class="lg:text-[32px] md:text-[24px] sm:text-[18px] text-[14px] max-w-screen-md mx-auto text-center font-medium text-[#1A1A1A]"
                     x-show="shown"
                     x-transition:enter-end="opacity-100 translate-y-0"
                     x-transition:enter-start="opacity-0 -translate-y-10"
@@ -1426,7 +1400,7 @@
                     x-transition:leave-start="opacity-100 translate-y-0"
                     x-transition:leave="transition transform ease-in duration-300"
                 >
-                    + خدمات التوجيه والإرشاد مابعد الكتراثون
+                    بالإضافة إلى خدمات التوجيه والإرشاد مابعد الكتراثون
                 </h2>
             </div>
 
@@ -1864,7 +1838,6 @@
 </section>
     <section
     class="relative flex min-h-screen items-center overflow-hidden bg-[#230C44]"
-    id="about-section"
     x-data="{ shown: false }"
     x-intersect.threshold.20="shown = true"
 >
@@ -1887,7 +1860,7 @@
             <div class="xl:gap-9 flex flex-col max-w-screen-xl gap-4 mx-auto">
                 <div
                     class=""
-                    x-data="countdown(Date.parse('20 Aug 2024 00:00:00 +3'))"
+                    x-data="countdown(Date.parse('4 Sep 2024 23:59:59 +3'))"
                 >
                     <template x-if="remaining < 0">
                         <div class="xl:gap-14 lg:gap-8 md:gap-6 sm:gap-4 flex gap-0">
@@ -2161,7 +2134,7 @@
                 <div class="flex flex-wrap items-center justify-center max-w-screen-xl gap-12 mx-auto">
                                             <a
                             class="flex"
-                            href="https://arweqah.sa"
+                            href="https://www.monshaat.gov.sa/ar"
                             target="_blank"
                             x-show="shown"
                             x-transition:enter-end="opacity-100 translate-y-0"
@@ -2180,14 +2153,14 @@
                                     <img
                                         class="object-scale-down w-full h-full"
                                         src="https://electrathon-sera.com/assets/images/partners/monshaat-logo.png"
-                                        alt="arweqah-logo"
+                                        alt="monshaat-logo"
                                     />
                                 </div>
                             </div>
                         </a>
                                             <a
                             class="flex"
-                            href="https://arweqah.sa"
+                            href="https://lunment.net"
                             target="_blank"
                             x-show="shown"
                             x-transition:enter-end="opacity-100 translate-y-0"
@@ -2205,8 +2178,8 @@
                                     class="md:w-80 w-64 h-48 py-4 px-8 rounded-md border border-gray-100 hover:bg-primary-100">
                                     <img
                                         class="object-scale-down w-full h-full"
-                                        src="https://electrathon-sera.com/assets/images/partners/code-logo.svg"
-                                        alt="arweqah-logo"
+                                        src="https://electrathon-sera.com/assets/images/partners/lunment-logo.png"
+                                        alt="lunment-logo"
                                     />
                                 </div>
                             </div>
@@ -2242,7 +2215,7 @@
                         </a>
                                             <a
                             class="flex"
-                            href="https://arweqah.sa"
+                            href="https://samawah.com.sa"
                             target="_blank"
                             x-show="shown"
                             x-transition:enter-end="opacity-100 translate-y-0"
@@ -2389,7 +2362,7 @@
                                 x-show="open"
                             >
                                 <p class="md:text-lg text-base font-bold">
-                                    تقوم الهيئة بمهمة تنظيم نشاط الكهرباء ويشمل ذلك توليد الكهرباء والإنتاج المزدوج من أي مصدر من مصادر الطاقة، ونقل الكهرباء، وتوزيعها، والمتاجرة بها، وبيعها بالتجزئة، ونشاط المشتري الرئيس، وتبريد المناطق. وينص التنظيم على أن تقوم الهيئة بتنظيم الخدمات والإشراف عليها في نطاق اختصاصها ومراقبة أدائها، والتنسيق فيما بين المؤسسات والجهات ذات العلاقة وبين الأشخاص المرخص لهم، لوضع الإطار التنظيمي والإجرائي اللازم لضمان مزاولة أنشطة الخدمات عند مستويات جودة وموثوقية عالية وتوفيرها للمستهلك بأسعار تنافسية معقولة تحقق العدالة بين المستهلكين
+                                    تقوم الهيئة بمهمة تنظيم نشاط الكهرباء ويشمل ذلك توليد الكهرباء والإنتاج المزدوج من أي مصدر من مصادر الطاقة، ونقل الكهرباء، وتوزيعها، والمتاجرة بها، وبيعها بالتجزئة، ونشاط المشتري الرئيس، وتبريد المناطق. وينص التنظيم على أن تقوم الهيئة بتنظيم الخدمات والإشراف عليها في نطاق اختصاصها ومراقبة أدائها، والتنسيق فيما بين المؤسسات والجهات ذات العلاقة وبين الأشخاص المرخص لهم، لوضع الإطار التنظيمي والإجرائي اللازم لضمان مزاولة أنشطة الخدمات عند مستويات جودة وموثوقية عالية وتوفيرها للمستهلك بأسعار تنافسية معقولة تحقق العدالة بين المستهلكين.
                                 </p>
                             </div>
                         </div>
@@ -2549,7 +2522,7 @@
                                 x-show="open"
                             >
                                 <p class="md:text-lg text-base font-bold">
-                                    نعم بالطبع، بإمكانك المشاركة بطرح فكرة جديدة ومبتكرة تخدم مجالًا غير موجود في الإلكتراثون .
+                                    نعم بالطبع، بإمكانك المشاركة بطرح فكرة جديدة ومبتكرة تخدم مجالًا غير موجود في الإلكتراثون.
                                 </p>
                             </div>
                         </div>
@@ -2629,7 +2602,7 @@
                                 x-show="open"
                             >
                                 <p class="md:text-lg text-base font-bold">
-                                    يمكنك المشاركة في التحدي كفرد، ولكن بعد ترشح فكرتك لإلكتراثون لا بد من تكوين فريق من شخصين لذات الفكرة للمشاركة في الإلكتراثون .
+                                    يمكنك المشاركة في التحدي كفرد، ولكن بعد ترشح فكرتك لإلكتراثون لا بد من تكوين فريق من شخصين لذات الفكرة للمشاركة في الإلكتراثون.
                                 </p>
                             </div>
                         </div>
@@ -2669,7 +2642,7 @@
                                 x-show="open"
                             >
                                 <p class="md:text-lg text-base font-bold">
-                                    نعم يمكنك تغيير أعضاء الفريق بعد التسجيل، ولكن عند الترشح لابد لك من اختيار شخصين لتمثيل الفكرة والمشاركة في الكتراثون .
+                                    نعم يمكنك تغيير أعضاء الفريق بعد التسجيل، ولكن عند الترشح لابد لك من اختيار شخصين لتمثيل الفكرة والمشاركة في الكتراثون.
                                 </p>
                             </div>
                         </div>
