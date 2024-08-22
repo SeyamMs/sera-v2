@@ -56,11 +56,13 @@
         </div>
     </div>
 
+    <div class="absolute inset-0 z-10 w-full h-full bg-transparent"></div>
     <div class="bg-gradient-to-b from-primary-950 to-transparent absolute top-0 left-0 z-0 w-full h-full">
         <video
             class="object-cover w-full h-full"
             poster="{{ $page->asset('videos/main-section.jpg') }}"
             autoplay
+            playsinline
             muted
             loop
         >

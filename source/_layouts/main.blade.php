@@ -10,15 +10,6 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     />
-    <link
-        href="{{ $page->getUrl() }}"
-        rel="canonical"
-    />
-    <meta
-        name="description"
-        content="{{ $page->description }}"
-    >
-    <title>{{ $page->title }}</title>
 
     <!-- favicon -->
     <link
@@ -73,6 +64,91 @@
         defer
         src="https://embed.typeform.com/next/embed.js"
     ></script>
+
+    <!-- seo tags -->
+    <title>{{ $page->title }}</title>
+    <link
+        href="{{ $page->getUrl() }}"
+        rel="canonical"
+    />
+    <meta
+        name="description"
+        content="{{ $page->description }}"
+    />
+    <meta
+        name="keywords"
+        content="{{ implode(', ', $page->keywords->toArray()) }}"
+    />
+
+    <meta
+        name="robots"
+        content="all"
+    />
+    <meta
+        property="og:title"
+        content="{{ $page->title }}"
+    />
+    <meta
+        property="og:description"
+        content="{{ $page->description }}"
+    />
+    <meta
+        property="og:type"
+        content="website"
+    />
+    <meta
+        property="og:locale"
+        content="ar_SA"
+    />
+    <meta
+        property="og:url"
+        content="{{ $page->getUrl() }}"
+    />
+    <meta
+        property="og:site_name"
+        content="{{ $page->title }}"
+    />
+    {{-- <meta
+        property="og:image"
+        content="https://amlhor.com/storage/527/2024_04_27_03_04_31.jpg"
+    /> --}}
+    <meta
+        property="og:image:height"
+        content="630"
+    />
+    <meta
+        property="og:image:width"
+        content="1200"
+    />
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image"
+    />
+    {{-- <meta
+        name="twitter:site"
+        content="@amlhorcom"
+    /> --}}
+    <meta
+        name="twitter:title"
+        content="{{ $page->title }}"
+    />
+    <meta
+        name="twitter:description"
+        content="{{ $page->description }}"
+    />
+    <meta
+        name="twitter:creator"
+        content="@SeyamMs"
+    />
+    <meta
+        name="twitter:url"
+        content="{{ $page->getUrl() }}"
+    />
+    {{-- <meta
+        name="twitter:image"
+        content="https://amlhor.com/storage/527/conversions/2024_04_27_03_04_31-twitter.jpg"
+    /> --}}
 </head>
 
 <body

@@ -29,10 +29,12 @@
                         x-transition:leave-start="opacity-100 translate-x-0"
                         x-transition:leave="transition transform ease-in duration-300"
                     >
+                        <div class="absolute inset-0 z-10 w-full h-full bg-transparent"></div>
                         <video
                             class="absolute top-0 left-0 z-0 object-cover w-full h-full"
                             poster="{{ $page->asset('videos/goals-section.jpg') }}"
                             autoplay
+                            playsinline
                             muted
                             loop
                         >

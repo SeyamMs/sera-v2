@@ -1,12 +1,12 @@
 @php
     $partners1 = [
-        [
-            'title' => 'الشريك الريادي',
-            'inverted' => false,
-            'partner' => 'monshaat-logo',
-            'image' => 'images/partners/monshaat-logo.png',
-            'url' => 'https://www.monshaat.gov.sa/ar',
-        ],
+        // [
+        //     'title' => 'الشريك الريادي',
+        //     'inverted' => false,
+        //     'partner' => 'monshaat-logo',
+        //     'image' => 'images/partners/monshaat-logo.png',
+        //     'url' => 'https://www.monshaat.gov.sa/ar',
+        // ],
         [
             'title' => 'الشريك الريادي',
             'inverted' => false,
