@@ -108,10 +108,10 @@
         property="og:site_name"
         content="{{ $page->title }}"
     />
-    {{-- <meta
+    <meta
         property="og:image"
-        content="https://amlhor.com/storage/527/2024_04_27_03_04_31.jpg"
-    /> --}}
+        content="{{ $page->asset('images/sharing-poster.jpg') }}"
+    />
     <meta
         property="og:image:height"
         content="630"
@@ -145,10 +145,10 @@
         name="twitter:url"
         content="{{ $page->getUrl() }}"
     />
-    {{-- <meta
+    <meta
         name="twitter:image"
-        content="https://amlhor.com/storage/527/conversions/2024_04_27_03_04_31-twitter.jpg"
-    /> --}}
+        content="{{ $page->asset('images/sharing-poster.jpg') }}"
+    />
 </head>
 
 <body
